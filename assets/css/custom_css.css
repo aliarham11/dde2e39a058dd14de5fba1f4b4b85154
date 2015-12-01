@@ -1,0 +1,12 @@
+
+html 
+{
+font-family: 'Oswald';
+color: rgba(22, 22, 22, 0.87);
+background-color: #EDE6FF;
+}
+
+.input-align-center {
+    width: 66%;
+    margin-left: 15%;
+}
