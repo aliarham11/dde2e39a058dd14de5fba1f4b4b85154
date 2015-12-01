@@ -2,4 +2,4 @@ Options All -Indexes
 RewriteEngine On
 
 RewriteCond $1 !^(index\.php|robots\.txt|assets|system|backend|application)
-RewriteRule ^(.*)$ /navalgame/index.php/$1 [L]
+RewriteRule ^(.*)$ /naval/index.php/$1 [L]
