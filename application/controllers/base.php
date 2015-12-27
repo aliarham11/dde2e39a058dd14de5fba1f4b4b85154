@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Base extends CI_Controller {
 
 	public function __construct()
 	{
@@ -9,8 +9,7 @@ class Welcome extends CI_Controller {
 		// Your own constructor code
 	}
 
-	public function index()
-	{
+	public function index(){
 
 		$data['rules'] = 'Ini Peraturan Permainan';
 
@@ -18,6 +17,30 @@ class Welcome extends CI_Controller {
 		$this->load->view('plain/default_header');
 		$this->load->view('question_template', $data);
 		$this->load->view('plain/default_footer');
+	}
+
+	public function interface3($type=''){
+		if(!$type){
+			$data['interface_chart'] = '';
+			$this->htmllib->add_js('pages/interface3.js');
+			$this->load->view('plain/default_header');
+			$this->load->view('interface3');
+			$this->load->view('plain/default_footer', $data);	
+		
+		}
+		else if($type == 'json'){
+
+			//Data for Interface 3, load from DB or Custom Init
+			$data = array(
+				array('id' => 1, 'parentId' => -1, 'name' => 'PRICE'),
+				array('id' => 2, 'parentId' => 1, 'name' => 'Total Cost'),
+				array('id' => 3, 'parentId' => 2, 'name' => 'Direct Cost'),
+				array('id' => 4, 'parentId' => 2, 'name' => 'Undirect Cost'),
+			);
+
+			echo json_encode($data);
+		}
+		
 	}
 
 	function get_question($number=0){
@@ -33,6 +56,8 @@ class Welcome extends CI_Controller {
 
 		echo json_encode($data);
 	}
+
+
 	
 }
 

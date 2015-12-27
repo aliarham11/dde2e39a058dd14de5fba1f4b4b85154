@@ -26,6 +26,12 @@ class Htmllib {
 		$this->js[] = "jQuery.print.js";
 		$this->js[] = "dropzone.js";
 		$this->js[] = "vis.min.js";
+		$this->js[] = "jquery.mousewheel.js";
+		$this->js[] = "perfect-scrollbar.js";
+		$this->js[] = "treant/raphael.js";
+		$this->js[] = "treant/Treant.min.js";
+		$this->js[] = "getorgchart_prety.js";
+
 	}
 	
 	private function _set_default_css()
@@ -38,6 +44,9 @@ class Htmllib {
 		$this->css[] = "jquery.dataTables.min.css";
 		$this->css[] = "notifIt.css";
 		$this->css[] = "custom_css.css";
+		$this->css[] = "perfect-scrollbar.css";
+		$this->css[] = "treant/Treant.css";
+		$this->css[] = "getorgchart.css";
 	}
 	
 	public function add_js($js)

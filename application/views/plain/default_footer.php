@@ -6,4 +6,6 @@
         $this->ci->htmllib->declare_js();
      ?>
 </body>
+<script>
+</script>
 </html>

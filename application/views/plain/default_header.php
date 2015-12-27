@@ -31,3 +31,4 @@
     <![endif]-->
 </head>
 <body>
+<input type="hidden" id="base_url" value="<?php echo base_url(); ?>">
