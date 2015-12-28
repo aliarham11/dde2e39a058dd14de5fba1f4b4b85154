@@ -40,6 +40,17 @@ class Base extends CI_Controller {
 
 			echo json_encode($data);
 		}
+		else if($type == 'json_games'){
+			//Data for Interface 3 Games, load from DB or Custom Init
+			$data = array(
+				array('id' => 1, 'parentId' => -1, 'name' => '- Jawab -'),
+				array('id' => 2, 'parentId' => 1, 'name' => '- Jawab -'),
+				array('id' => 3, 'parentId' => 2, 'name' => '- Jawab -'),
+				array('id' => 4, 'parentId' => 2, 'name' => '- Jawab -'),
+			);
+
+			echo json_encode($data);
+		}
 		
 	}
 
