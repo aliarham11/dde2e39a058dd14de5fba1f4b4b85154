@@ -14,7 +14,7 @@ $(document).ready(function(){
             get_interface3_chart();
         }
         if(story == 2){
-            get_interface3_chart_games();
+            get_interface4_games();
         }
         
     })
@@ -22,7 +22,7 @@ $(document).ready(function(){
 })
 
 function get_interface3_chart(){
-    url = $('#base_url').val() + 'base/interface3/json'
+    url = $('#base_url').val() + 'interface_3_4/json_operation/json'
 
     $.getJSON(url, function(data) {
         console.log(data);
@@ -39,8 +39,8 @@ function get_interface3_chart(){
     })    
 }
 
-function get_interface3_chart_games(){
-    url = $('#base_url').val() + 'base/interface3/json_games'
+function get_interface4_games(){
+    url = $('#base_url').val() + 'interface_3_4/json_operation/json_games'
 
     $.getJSON(url, function(data) {
         console.log(data);
@@ -59,7 +59,7 @@ function get_interface3_chart_games(){
     $("#interface3-chart").on("updateEvent", function(event, sender, args) {
         // console.log(args.data.answer);
         console.log(args.id);
-        url = $('#base_url').val() + 'base/interface3/json_answer?id=' + args.id + '&answer=' + args.data.jawaban
+        url = $('#base_url').val() + 'interface_3_4/json_operation/json_answer?id=' + args.id + '&answer=' + args.data.jawaban
         $.getJSON(url, function(result){
             console.log(result);
             alert(result);
