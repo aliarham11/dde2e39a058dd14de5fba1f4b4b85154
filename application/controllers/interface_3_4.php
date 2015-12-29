@@ -11,10 +11,12 @@ class Interface_3_4 extends CI_Controller {
 
 	public function index(){
 
+			$data['title'] = 'Naval Game';
+
 			$data['interface_chart'] = '';
-			$this->htmllib->add_js('pages/interface3_4.js');
+			$this->htmllib->add_js('pages/interface_3_4.js');
 			$this->load->view('plain/default_header');
-			$this->load->view('interface3_4');
+			$this->load->view('interface3_4', $data);
 			$this->load->view('plain/default_footer', $data);	
 
 	}
