@@ -9,6 +9,7 @@ $(document).ready(function(){
         $('#interface3-header').text('Komponen Biaya Pembentuk Harga Kapal Baru').append('<i class="material-icons left">subtitles</i>');
         $('#interface3-title').css('display','none');
         $('#interface3-chart').css('display','block');
+
         if(story == 1){
             get_interface3_chart();
         }
@@ -46,7 +47,7 @@ function get_interface3_chart_games(){
         $('#interface3-chart').getOrgChart({
                     color: "blue",
                     theme: "vivian",
-                    primaryColumns: ["name"],
+                    primaryColumns: ["jawaban"],
                     imageColumn: "image",
                     editable: true,
                     orientation: getOrgChart.RO_RIGHT,
@@ -54,6 +55,18 @@ function get_interface3_chart_games(){
                   
                 });    
     })   
+
+    $("#interface3-chart").on("updateEvent", function(event, sender, args) {
+        // console.log(args.data.answer);
+        console.log(args.id);
+        url = $('#base_url').val() + 'base/interface3/json_answer?id=' + args.id + '&answer=' + args.data.jawaban
+        $.getJSON(url, function(result){
+            console.log(result);
+            alert(result);
+        })
+
+        
+    });
 }
 
 
