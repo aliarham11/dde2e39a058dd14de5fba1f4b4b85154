@@ -34,7 +34,40 @@ class Base extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function login(){
+		$params["alert"] = get_alert();
+		$this->load->view("login",$params);
+	}
 
-	
+	public function logout(){
+		$this->session->unset_userdata("id");
+		redirect(base_url()."base/login");
+	}
+
+	public function create_session(){
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
+
+		if ($this->form_validation->run())
+		{
+			$this->load->model("user");
+			$user = $this->user->auth($this->input->post("username"), $this->input->post("password"));
+			if (count($user) > 0){
+				$this->session->set_userdata("id",$user->id);
+				redirect(base_url());
+			}
+			else{
+				$this->session->set_flashdata("alert","Username dan password tidak cocok");
+				redirect(base_url()."base/login");
+			}
+		}
+		else
+		{
+			$this->session->set_flashdata("alert",validation_errors());
+			redirect(base_url()."base/login");
+		}
+	}
 }
 
