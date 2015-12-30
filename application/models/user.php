@@ -22,7 +22,7 @@ class User extends CI_Model {
 		if(isset($data["password"])){
 			$data["password"] = md5($data["password"]);
 		}
-		return $this->db->update($this->table_name, $data, "$pk_col = '$id'");
+		return $this->db->update($this->table_name, $data, "$this->pk_col = '$id'");
 	}
 
 	public function auth($username, $password){
