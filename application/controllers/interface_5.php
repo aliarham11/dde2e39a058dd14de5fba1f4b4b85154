@@ -19,6 +19,15 @@ class Interface_5 extends CI_Controller {
 		$this->load->view('plain/default_footer');
 	}
 
+	public function get_table_data()
+	{
+		$this->load->model('Interface_5_model', 'Interface_5');
+		$data = $this->Interface_5->get_by_lb_number($this->input->get('label_number'));
+
+		echo json_encode($data);
+		# code...
+	}
+
 	
 }
 

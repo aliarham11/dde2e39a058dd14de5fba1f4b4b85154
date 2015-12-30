@@ -15,6 +15,12 @@ background-color: #EDE6FF;
     list-style-type: circle
 }
 
+.scrollable-div {
+    height :600px;
+    overflow-y: auto;
+    background-color: #eee;
+
+}
 .chart { height: 400px; margin: 5px; width: 800px; margin: 5px auto; border: 3px solid #DDD; border-radius: 3px;  }
 .Treant > .node {  }
 /*.Treant > p { font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: bold; font-size: 12px; }*/

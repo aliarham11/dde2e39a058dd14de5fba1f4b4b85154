@@ -24,59 +24,14 @@
 	  	<div class="row">	
 	  		<div id="interface5-table1" style="display:none" class="col s10">
 	  			<table class="striped" style="text-align:center;margin-left:10%">
-	  				<tbody>
-			  			<tr>
-							<td>Loa (Length over all)</td>
-							<td>108,20 m</td>
-			  			</tr>
-			  			<tr>
-							<td>Lpp (Length between perpendicular)</td>
-							<td>102 m</td>
-						</tr>
-						<tr>
-							<td>B (Breadth)</td>
-							<td>19,2 m</td>
-						</tr>
-						<tr>
-							<td>H (Depth)</td>
-							<td>9,3 m</td>
-						</tr>
-						<tr>
-							<td>T (Draught)</td>
-							<td>6 m</td>
-						</tr>
-						<tr>
-							<td>Vs (Speed)</td>
-							<td>12 knot</td>
-						</tr>
-						<tr>
-							<td>Cb (Coefficient block)</td>
-							<td>0,76</td>
-						</tr>
-						<tr>
-							<td>Necessary power at actual draught</td>
-							<td>2570 KW</td>
-						</tr>
-						<tr>
-							<td>Main engine power used</td>
-							<td>2760 KW, Wartsilla 6L32</td>
-						</tr>
-						<tr>
-							<td>Wst (Weight of steel and profile)</td>
-							<td>1.968.166 kg (1.968,2 ton)</td>
-						</tr>
-						<tr>
-							<td>Displacement of weight</td>
-							<td>9.153,6 ton </td>
-						</tr>
-						<tr>
-							<td>LWT (Lightweight)</td>
-							<td>1.968.166 kg</td>
-						</tr>
+	  				<tbody id="table1">
+			  			
 	  				</tbody>
 	  			</table>
  			</div>	
-		  	 	
+	  	 	<div id="interface5-img" class="col s10 scrollable-div" style="display:none;margin-left:10%">
+	  	 		<img src="<?php echo base_url(); ?>assets/images/gb1.jpg">
+	  	 	</div>
 	  	</div>
 	  	<div class="row">
 		 <div class="input-field center-align" style="margin-bottom:30px">
