@@ -19,6 +19,8 @@ class Htmllib {
 		$this->js[] = "notifIt.js";
 		$this->js[] = "plugins/datatables/js/jquery.dataTables.js";
 		$this->js[] = "plugins/datatables/js/dataTables.tableTools.js";
+		// $this->js[] = "plugins/chartjs/chart.min.js";
+		$this->js[] = "plugins/ChartNew.js";
 		$this->js[] = "plugins.js";
 		$this->js[] = "plugins/easytabs/jquery.easytabs.min.js";
 		$this->js[] = "d3.v3.min.js";
