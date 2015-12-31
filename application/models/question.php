@@ -12,6 +12,8 @@ class Question extends CI_Model {
 		$this->db->select('questions.machinery_cost');
 		$this->db->select('questions.construction_cost');
 		$this->db->select('questions.tukar_dolar');
+		$this->db->select('questions.score_parts');
+		$this->db->select('questions.score_cost');
 		$this->db->from($this->table_name);
 	}
 

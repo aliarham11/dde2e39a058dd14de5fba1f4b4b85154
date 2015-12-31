@@ -35,16 +35,26 @@ class Base extends CI_Controller {
 	}
 
 	public function login(){
+		if(need_login()){
+			redirect(base_url()."games/chose_level");
+		}
 		$params["alert"] = get_alert();
 		$this->load->view("login",$params);
 	}
 
 	public function logout(){
-		$this->session->unset_userdata("id");
+		$this->session->unset_userdata("user_id");
+		$this->session->unset_userdata("level_id");
+		$this->session->unset_userdata("level");
+		$this->session->unset_userdata("game_id");
+		$this->session->unset_userdata("game");
 		redirect(base_url()."base/login");
 	}
 
 	public function create_session(){
+		if(need_login()){
+			redirect(base_url()."base/logout");
+		}
 		$this->load->library('form_validation');
 
 		$this->form_validation->set_rules('username', 'Username', 'required');
@@ -55,8 +65,8 @@ class Base extends CI_Controller {
 			$this->load->model("user");
 			$user = $this->user->auth($this->input->post("username"), $this->input->post("password"));
 			if (count($user) > 0){
-				$this->session->set_userdata("id",$user->id);
-				redirect(base_url());
+				$this->session->set_userdata("user_id",$user->id);
+				redirect(base_url()."games/chose_level");
 			}
 			else{
 				$this->session->set_flashdata("alert","Username dan password tidak cocok");

@@ -6,8 +6,10 @@ class Game extends CI_Model {
 
 	public function select(){
 		$this->db->select('games.id');
-		$this->db->select('games.parent_id');
-		$this->db->select('games.name');
+		$this->db->select('games.user_id');
+		$this->db->select('games.level_id');
+		$this->db->select('games.created_at');
+		$this->db->select('games.finish');
 		$this->db->from($this->table_name);
 	}
 
@@ -42,7 +44,7 @@ class Game extends CI_Model {
 	}
 
 	public function unfinished($user_id, $level_id){
-		$query = $this->where("finish = false and user_id = '$user_id' and level_id = '$level_id'");
-		return $query->first_row();
+		$result = $this->where("finish = false and user_id = '$user_id' and level_id = '$level_id'");
+		return $result;
 	}
 }
