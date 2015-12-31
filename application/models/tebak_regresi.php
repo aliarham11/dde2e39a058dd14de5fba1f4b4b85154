@@ -55,22 +55,17 @@ class Tebak_regresi extends CI_Model {
   }
 
   public function generate_wst($dwt){
-    $wst = $dwt;
+    $wst = 0.078 * $dwt + 1458;
     return $wst;
   }
 
   public function generate_engine_power($dwt){
-    $engine_power = $dwt;
+    $engine_power = ( 7 * pow(10, -5)) * pow($dwt,2) - ( 0.54 * $dwt ) + ( 3092.8 );
     return $engine_power;
   }
 
-  public function generate_type_of_engine($dwt){
-    $type_eng = $dwt;
-    return $type_eng;
-  }
-
   public function generate_lwt($dwt){
-    $lwt = $dwt;
+    $lwt = (-2 * pow(10, -5)) * pow($dwt,2) + (0.283 * $dwt) + 1655.5;
     return $lwt;
   }
 
@@ -80,10 +75,10 @@ class Tebak_regresi extends CI_Model {
       $this->load->model("katalog_engine");
       $data["game_id"] = $game_id;
       $data["dwt"] = rand ( 5000 , 9999 );
-      $data["act_wst"] = $data["dwt"];
-      $data["act_engine_power"] = $data["dwt"];
+      $data["act_wst"] = $this->generate_wst($data["dwt"]);
+      $data["act_engine_power"] = $this->engine_power($data["dwt"]);
       $data["act_type_of_engine"] = $this->katalog_engine->get_engine($data["act_engine_power"]);
-      $data["act_lwt"] = $data["dwt"];
+      $data["act_lwt"] = $this->generate_lwt($data["dwt"]);
       $this->insert($data);
       $query = $this->where("tebak_regresis.game_id = '$game_id'");
     }
