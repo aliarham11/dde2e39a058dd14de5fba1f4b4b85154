@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 31, 2015 at 12:03 
+-- Generation Time: Jan 01, 2016 at 05:45 
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -30,9 +30,46 @@ CREATE TABLE `answers` (
   `id` int(11) NOT NULL,
   `question_id` int(11) NOT NULL,
   `part_id` int(11) NOT NULL,
-  `actual` double NOT NULL,
+  `actual` double DEFAULT NULL,
   `estimate` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `answers`
+--
+
+INSERT INTO `answers` (`id`, `question_id`, `part_id`, `actual`, `estimate`) VALUES
+(14, 5, 1, 3570505.9692839, 3570505.9692839),
+(15, 5, 2, 1785252.984642, 0),
+(16, 5, 3, 1249677.0892494, 0),
+(17, 5, 4, 357050.59692839, 0),
+(18, 5, 5, 357050.59692839, 0),
+(19, 5, 6, 89262.649232098, 0),
+(20, 5, 7, 7408799.8862642, 0),
+(21, 5, 8, 1921518.9873418, 0),
+(22, 5, 9, 634101.26582279, 0),
+(23, 5, 10, 720569.62025318, 0),
+(24, 5, 11, 320893.67088608, 0),
+(25, 5, 12, 80703.797468356, 0),
+(26, 5, 13, 3677787.3417722, 0),
+(27, 5, 14, NULL, 0),
+(28, 5, 15, NULL, 0),
+(29, 5, 16, NULL, 0),
+(30, 5, 17, NULL, 0),
+(31, 5, 18, NULL, 0),
+(32, 5, 19, 1252087.1807786, 0),
+(33, 5, 20, 2025074.4923284, 0),
+(34, 5, 21, 2025074.4923284, 0),
+(35, 5, 22, 246773.4881763, 0),
+(36, 5, 23, 164515.6587842, 0),
+(37, 5, 24, 14775038.048104, 0),
+(38, 5, 25, 295500.76096208, 0),
+(39, 5, 26, 265950.68486587, 0),
+(40, 5, 27, 1182003.0438483, 0),
+(41, 5, 28, 1743454.4896762, 0),
+(42, 5, 29, 825924.62688901, 0),
+(43, 5, 30, 16518492.53778, 0),
+(44, 5, 31, 17344417.164669, 0);
 
 -- --------------------------------------------------------
 
@@ -45,16 +82,18 @@ CREATE TABLE `games` (
   `user_id` int(11) NOT NULL,
   `level_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `finish` tinyint(1) NOT NULL DEFAULT '0'
+  `score_parts` double DEFAULT NULL,
+  `finish` tinyint(1) NOT NULL DEFAULT '0',
+  `total_score` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `games`
 --
 
-INSERT INTO `games` (`id`, `user_id`, `level_id`, `created_at`, `finish`) VALUES
-(20, 2, 2, '2015-12-31 08:20:35', 0),
-(22, 2, 2, '2015-12-31 08:38:03', 0);
+INSERT INTO `games` (`id`, `user_id`, `level_id`, `created_at`, `score_parts`, `finish`, `total_score`) VALUES
+(20, 2, 2, '2015-12-31 08:20:35', NULL, 0, NULL),
+(22, 2, 2, '2015-12-31 08:38:03', NULL, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -91,21 +130,19 @@ CREATE TABLE `questions` (
   `machinery_cost` int(11) NOT NULL,
   `construction_cost` int(11) NOT NULL,
   `tukar_dolar` int(11) NOT NULL,
-  `score_part` double DEFAULT NULL,
+  `wst` double NOT NULL,
+  `engine_power` double NOT NULL,
+  `type_of_engine` double NOT NULL,
+  `lwt` double NOT NULL,
   `score_cost` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `scores`
+-- Dumping data for table `questions`
 --
 
-CREATE TABLE `scores` (
-  `id` int(11) NOT NULL,
-  `game_id` int(11) NOT NULL,
-  `value` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `questions` (`id`, `game_id`, `dwt`, `harga_pelat`, `machinery_cost`, `construction_cost`, `tukar_dolar`, `wst`, `engine_power`, `type_of_engine`, `lwt`, `score_cost`) VALUES
+(5, 22, 7358, 10183, 506, 7246, 9500, 2031.924, 2909.29148, 3000, 2655.01072, NULL);
 
 -- --------------------------------------------------------
 
@@ -145,8 +182,8 @@ INSERT INTO `ship_parts` (`id`, `parent_id`, `name`) VALUES
 (19, 24, 'Electric Part'),
 (20, 21, 'Consumable material, rental equipment and labor'),
 (21, 24, 'Construction cost'),
-(22, 24, 'Launching and testing'),
-(23, 24, 'Inspection & survey'),
+(22, 24, 'Inspection & survey'),
+(23, 24, 'Launching and testing'),
 (24, 30, 'DIRECT COST'),
 (25, 28, 'Design cost'),
 (26, 28, 'Insurance cost'),
@@ -164,10 +201,47 @@ INSERT INTO `ship_parts` (`id`, `parent_id`, `name`) VALUES
 
 CREATE TABLE `tebak_parts` (
   `id` int(11) NOT NULL,
-  `question_id` int(11) NOT NULL,
+  `game_id` int(11) NOT NULL,
   `part_id` int(11) NOT NULL,
-  `answers` varchar(255) DEFAULT NULL
+  `answer` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tebak_parts`
+--
+
+INSERT INTO `tebak_parts` (`id`, `game_id`, `part_id`, `answer`) VALUES
+(32, 22, 1, NULL),
+(33, 22, 2, NULL),
+(34, 22, 3, NULL),
+(35, 22, 4, NULL),
+(36, 22, 5, NULL),
+(37, 22, 6, NULL),
+(38, 22, 7, NULL),
+(39, 22, 8, NULL),
+(40, 22, 9, NULL),
+(41, 22, 10, NULL),
+(42, 22, 11, NULL),
+(43, 22, 12, NULL),
+(44, 22, 13, NULL),
+(45, 22, 14, NULL),
+(46, 22, 15, NULL),
+(47, 22, 16, NULL),
+(48, 22, 17, NULL),
+(49, 22, 18, NULL),
+(50, 22, 19, NULL),
+(51, 22, 20, NULL),
+(52, 22, 21, NULL),
+(53, 22, 22, NULL),
+(54, 22, 23, NULL),
+(55, 22, 24, NULL),
+(56, 22, 25, NULL),
+(57, 22, 26, NULL),
+(58, 22, 27, NULL),
+(59, 22, 28, NULL),
+(60, 22, 29, NULL),
+(61, 22, 30, NULL),
+(62, 22, 31, NULL);
 
 -- --------------------------------------------------------
 
@@ -250,12 +324,6 @@ ALTER TABLE `questions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `scores`
---
-ALTER TABLE `scores`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `ship_parts`
 --
 ALTER TABLE `ship_parts`
@@ -288,7 +356,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `games`
 --
@@ -303,17 +371,12 @@ ALTER TABLE `levels`
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `scores`
---
-ALTER TABLE `scores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tebak_parts`
 --
 ALTER TABLE `tebak_parts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `tebak_regresis`
 --
