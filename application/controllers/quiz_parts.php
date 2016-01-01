@@ -14,6 +14,8 @@ class Quiz_parts extends CI_Controller {
     if ($this->game_sessions == false){
       redirect(base_url()."games/start");
     }
+
+
     // Your own constructor code
   }
 
