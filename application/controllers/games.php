@@ -25,7 +25,12 @@ class Games extends CI_Controller {
 
   public function start(){
     if (need_game()){
+      $params["is_resume"] = 'true';
       redirect(base_url()."games/run");
+      // $this->htmllib->add_js('pages/game.js');
+      // $this->load->view('plain/default_header');
+      // $this->load->view("games/home",$params);
+      // $this->load->view('plain/default_footer');
     }
     $level_id = $this->input->post("level_id");
     $level = $this->level->get_by_id($level_id);
@@ -39,6 +44,7 @@ class Games extends CI_Controller {
       $this->session->set_userdata("level_id",$level_id);
       $this->session->set_userdata("level",$level);
       $params["games"] = $this->game->unfinished($this->session->userdata("user_id"), $level_id);
+      $params["is_resume"] = 'false';
       $this->htmllib->add_js('pages/game.js');
       $this->load->view('plain/default_header');
       $this->load->view("games/home",$params);
@@ -60,7 +66,12 @@ class Games extends CI_Controller {
     $params["notice"] = get_notice();
     $game_sessions = need_game();
     if ($game_sessions != false){
-      $this->load->view("games/run",$params);
+      $params['is_resume'] = 'true';
+      $this->htmllib->add_js('pages/game.js');
+      $this->load->view('plain/default_header');
+      $this->load->view("games/home",$params);
+      $this->load->view('plain/default_footer');
+      // $this->load->view("games/run",$params);
     }
     else{
       if ($this->input->post("game_id") != "0"){

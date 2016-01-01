@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+	if($('#resume').val() == 'true'){
+		$('#pregame').css('display','none');
+		$('#game_options').css('display','block');	
+	}
+
 	$('#get_games').click(function(){
 
 

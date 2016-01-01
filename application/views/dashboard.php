@@ -1,9 +1,4 @@
 <section id="container">
-<div class="row">
-	<div class="col s12 grey darken-4">
-		<h5 class="white-text">Naval Game</h5>
-	</div>
-</div> 	
  
 	<div class="container z-depth-3">
 	  <nav>
