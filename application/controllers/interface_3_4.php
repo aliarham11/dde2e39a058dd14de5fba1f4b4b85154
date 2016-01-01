@@ -16,13 +16,13 @@ class Interface_3_4 extends CI_Controller {
 			$data['interface_chart'] = '';
 			$this->htmllib->add_js('pages/interface_3_4.js');
 			$this->load->view('plain/default_header');
-			$this->load->view('interface3_4', $data);
+			$this->load->view('interface_3_4/home', $data);
 			$this->load->view('plain/default_footer', $data);	
 
 	}
 
 	public function json_operation($type=''){
-
+		$this->load->model('ship_parts','ship');
 		if($type == 'json'){
 
 			//Data for Interface 3, load from DB or Custom Init
@@ -36,7 +36,8 @@ class Interface_3_4 extends CI_Controller {
 			echo json_encode($data);
 		}
 		else if($type == 'json_games'){
-			//Data for Interface 3 Games, load from DB or Custom Init
+			
+			//Data for Interface 3, load from DB or Custom Init
 			$data = array(
 				array('id' => 1, 'parentId' => -1, 'jawaban' => '- Jawab -'),
 				array('id' => 2, 'parentId' => 1, 'jawaban' => '- Jawab -'),

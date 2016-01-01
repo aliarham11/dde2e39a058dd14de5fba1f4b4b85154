@@ -1,7 +1,7 @@
 <section id="container">
 <div class="row">
 	<div class="col s12 grey darken-4">
-		<h5 class="white-text"><?php echo $title; ?>/h5>
+		<h5 class="white-text"><?php echo $title; ?></h5>
 	</div>
 </div> 	
  

@@ -28,10 +28,22 @@
 			  			
 	  				</tbody>
 	  			</table>
+
  			</div>	
 	  	 	<div id="interface5-img" class="col s10 scrollable-div" style="display:none;margin-left:10%">
 	  	 		<img src="<?php echo base_url(); ?>assets/images/gb1.jpg">
 	  	 	</div>
+	  	</div>
+	  	<div class="row">
+	  		<div id="interface5-table2" style="display:none" class="col s10">
+	  			<p class="flow-text center-align" id="title-text3">Kondisi biaya/harga terkait keterangan kapal</p>
+	  			<table class="striped" style="text-align:center;margin-left:10%">
+	  				<tbody id="table2">
+			  			
+	  				</tbody>
+	  			</table>
+
+ 			</div>
 	  	</div>
 	  	<div class="row">
 		 <div class="input-field center-align" style="margin-bottom:30px">

@@ -6,9 +6,11 @@ class Ship_part extends CI_Model {
 
 	public function select(){
 		$this->db->select('ship_parts.id');
-		$this->db->select('ship_parts.parent_id');
+		$this->db->select('ship_parts.parentId');
 		$this->db->select('ship_parts.name');
 		$this->db->from($this->table_name);
+		return $this->db->get()->result_array();
+
 	}
 
 	public function insert($data){

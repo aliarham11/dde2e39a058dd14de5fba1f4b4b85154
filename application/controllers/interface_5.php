@@ -15,7 +15,7 @@ class Interface_5 extends CI_Controller {
 
 		$this->htmllib->add_js('pages/interface_5.js');
 		$this->load->view('plain/default_header');
-		$this->load->view('interface_5', $data);
+		$this->load->view('interface_5/home', $data);
 		$this->load->view('plain/default_footer');
 	}
 
