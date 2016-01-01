@@ -6,6 +6,7 @@ class Users extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library('htmllib');
+		$this->load->model('level');
 		// Your own constructor code
 	}
 
@@ -32,14 +33,33 @@ class Users extends CI_Controller {
 			$this->load->model("user");
 			$this->user->insert($data);
 			$this->session->set_flashdata("notice","Registrasi Sukses");
-			redirect(base_url()."users/user_new");
+			redirect(base_url()."base/login");
 		}
 		else
 		{
+			
 			$params["data"] = $data;
 			$params["errors"] = validation_errors();
+			$this->load->view('plain/default_header');
 			$this->load->view('user_new',$params);
+			$this->load->view('plain/default_footer');
+
 		}
+	}
+
+	public function dashboard($value='')
+	{
+		if (($level_session = need_level())){
+	      redirect(base_url()."games/start");
+	    }
+	    $params["notice"] = get_notice();
+	    $params["levels"] = $this->level->where();
+	    $params['user_name'] = $this->session->userdata("user_name");
+
+	    $this->htmllib->add_js('pages/dashboard.js');
+		$this->load->view('plain/default_header');
+		$this->load->view('dashboard',$params);
+		$this->load->view('plain/default_footer');
 	}
 }
 
