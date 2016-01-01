@@ -1,4 +1,7 @@
-
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 html 
 {
 font-family: 'Oswald';
@@ -40,4 +43,14 @@ background-color: #EDE6FF;
 
 .nodeExample1 img {
     margin-right:  10px;
+}
+
+.narrow {
+    margin-top: 5%;
+    width: 40%;
+}
+
+.text-title{
+    margin-left:10px;
+    font-size: x-large;
 }

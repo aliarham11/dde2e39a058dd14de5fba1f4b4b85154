@@ -36,10 +36,12 @@ class Base extends CI_Controller {
 
 	public function login(){
 		if(need_login()){
-			redirect(base_url()."games/chose_level");
+			redirect(base_url()."users/dashboard");
 		}
 		$params["alert"] = get_alert();
+		$this->load->view('plain/default_header');
 		$this->load->view("login",$params);
+		$this->load->view('plain/default_footer');
 	}
 
 	public function logout(){
@@ -66,7 +68,8 @@ class Base extends CI_Controller {
 			$user = $this->user->auth($this->input->post("username"), $this->input->post("password"));
 			if (count($user) > 0){
 				$this->session->set_userdata("user_id",$user->id);
-				redirect(base_url()."games/chose_level");
+				$this->session->set_userdata("user_name",$user->username);
+				redirect(base_url()."users/dashboard");
 			}
 			else{
 				$this->session->set_flashdata("alert","Username dan password tidak cocok");

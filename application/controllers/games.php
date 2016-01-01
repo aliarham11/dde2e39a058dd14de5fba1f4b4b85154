@@ -39,17 +39,21 @@ class Games extends CI_Controller {
       $this->session->set_userdata("level_id",$level_id);
       $this->session->set_userdata("level",$level);
       $params["games"] = $this->game->unfinished($this->session->userdata("user_id"), $level_id);
-      $this->load->view("games/start",$params);
+      $this->htmllib->add_js('pages/game.js');
+      $this->load->view('plain/default_header');
+      $this->load->view("games/home",$params);
+      $this->load->view('plain/default_footer');
     }
     else
     {
       $params["errors"] = "Unknown level";
       $params["levels"] = $this->level->where();
-      $this->load->view('games/chose_level',$params);
+      $this->load->view('users/dashboard',$params);
     }
   }
 
   public function run(){
+    $success = false;
     if (need_level() == false){
       redirect(base_url()."games/chose_level");
     }
@@ -66,12 +70,14 @@ class Games extends CI_Controller {
       else{
         $data["user_id"] = $this->session->userdata("user_id");
         $data["level_id"] = $this->session->userdata("level_id");
+        $success = true;
         $game_id = $this->game->insert($data);
         $game = $this->game->get_by_id($game_id);
       }
       $this->session->set_userdata("game_id",$game_id);
       $this->session->set_userdata("game",$game);
-      $this->load->view("games/run",$params);
+      // $this->load->view("games/run",$params);
+      echo json_encode($success);
     }
   }
 }
