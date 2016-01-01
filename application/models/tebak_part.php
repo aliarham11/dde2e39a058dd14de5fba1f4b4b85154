@@ -1,17 +1,18 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tebak_part extends CI_Model {
-  private $pk_col = 'answers.id';
-  private $table_name = 'answers';
+  private $pk_col = 'tebak_parts.id';
+  private $table_name = 'tebak_parts';
 
   public function select(){
-    $this->db->select('tebak_pats.id');
-    $this->db->select('tebak_pats.question_id');
-    $this->db->select('tebak_pats.part_id');
-    $this->db->select('tebak_pats.answer');
+    $this->db->select('tebak_parts.id');
+    $this->db->select('tebak_parts.game_id');
+    $this->db->select('tebak_parts.part_id');
+    $this->db->select('ship_parts.parent_id');
+    $this->db->select('tebak_parts.answer');
     $this->db->select('ship_parts.name');
     $this->db->from($this->table_name);
-    $this->db->join("ship_parts", "ship_parts.id = tebak_pats.part_id");
+    $this->db->join("ship_parts", "ship_parts.id = tebak_parts.part_id");
   }
 
   public function insert($data){
@@ -44,11 +45,36 @@ class Tebak_part extends CI_Model {
     return $query->result();
   }
 
-  public function answer_parts($question_id){
-    $answers = $this->where("answers.question_id = '$question_id'");
-    foreach ($answers as $answer) {
-      $answer_parts[$answer->parts_id] = $answer;
+  public function get_or_create_by_game($game_id){
+    $parts = $this->where("game_id = '$game_id'");
+    if (count($parts) == 0){
+      $this->load->model("ship_part");
+      $ship_parts = $this->ship_part->where();
+      foreach ($ship_parts as $ship_part) {
+        $data["game_id"] = $game_id;
+        $data["part_id"] = $ship_part->id;
+        $this->insert($data);
+      }
+      $parts = $this->where("game_id = '$game_id'");
     }
-    return $answer_parts;
+    return $parts;
+  }
+
+  public function calculate_score_by_game($game_id){
+    $parts = $this->where("game_id = '$game_id'");
+    if (count($parts) > 0){
+      $correct = 0;
+      strtolower("Hello WORLD.");
+      foreach ($parts as $part) {
+        if(strtolower($part->name) == strtolower($part->answer)) $correct ++;
+      }
+      $data["score_parts"] = 100 * $correct / 31;
+      $this->load->model("game");
+      $this->game->update($data, $game_id);
+      return $data["score_parts"];
+    }
+    else{
+      return false;
+    }
   }
 }
