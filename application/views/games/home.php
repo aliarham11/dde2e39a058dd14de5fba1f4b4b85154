@@ -15,7 +15,7 @@
 	  </nav>	
 	  <div class="grey lighten-5">
 	  	<div class="row">
-	  		<div class="col s12">
+	  		<div class="col s12" id="pregame">
 	  			<form id="choose_start">
 	  			<?php if(isset($games)): ?>
 	  				<p class="text-title">Kamu punya permainan yang belum terselesaikan : </p>
@@ -39,18 +39,67 @@
 	  				</p>
 	  				</form>
 	  			</div>
-	  		</div>
-	  		<div class="row" id="game_options" style="display: none">
-	  			<p>
-					<?php
-					  if (isset($notice)){
-					    echo $notice;
-					  }
-					?>
-					</p>
-					  <a href="<?php echo base_url();?>quiz_parts">Tebak Parts</a>
-					  <a href="<?php echo base_url();?>quiz_regresi">Tebak Regresi</a>
-					  <a href="<?php echo base_url();?>quiz_cost">Tebak Cost</a>
+	  		
+		  		<div class="col s12" id="game_options" style="display: none">
+			  		<p>
+							<?php
+							  if (isset($notice)){
+							    echo $notice;
+							  }
+							?>
+						</p>
+						  
+		  			<div class="row">
+		        <div class="col s4">
+		          <div class="card">
+		            <div class="card-image" style="height:200px">
+		              <img src="<?php base_url() ?>/naval/assets/images/shipparts.png">
+		              <span class="card-title blue-text">Tebak Parts</span>
+		            </div>
+		            <div class="card-content">
+		              <p>I am a very simple card. I am good at containing small bits of information.
+		              I am convenient because I require little markup to use effectively.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="<?php echo base_url();?>quiz_parts">Mulai</a>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s4">
+		          <div class="card" >
+		            <div class="card-image" style="height:200px">
+		              <img src="<?php base_url() ?>/naval/assets/images/regression.png">
+		              <span class="card-title blue-text">Tebak Regresi</span>
+		            </div>
+		            <div class="card-content">
+		              <p>I am a very simple card. I am good at containing small bits of information.
+		              I am convenient because I require little markup to use effectively.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="<?php echo base_url();?>quiz_regresi">Mulai</a>
+		            </div>
+		          </div>
+		        </div>
+
+		        <div class="col s4">
+		          <div class="card" >
+		            <div class="card-image" style="height:200px">
+		              <img src="<?php base_url() ?>/naval/assets/images/shipcost.jpg">
+		              <span class="card-title blue-text">Tebak Cost</span>
+		            </div>
+		            <div class="card-content">
+		              <p>I am a very simple card. I am good at containing small bits of information.
+		              I am convenient because I require little markup to use effectively.</p>
+		            </div>
+		            <div class="card-action">
+		              <a href="<?php echo base_url();?>quiz_cost">Mulai</a>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		  			
+		  		</div>
 	  		</div>
 	  	
 	  </div>

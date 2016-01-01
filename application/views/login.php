@@ -5,7 +5,7 @@
 	  <nav>
 	    <div class="nav-wrapper blue darken-3">
 	      <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="question_header">
-	      	Login<i class="material-icons left">warning</i>
+	      	Login<i class="material-icons left">person_pin</i>
 	      </a>
 	    </div>
 	  </nav>	

@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	$('#get_games').click(function(){
 
+
 		var url = $('#base_url').val() + 'games/run';
 		$.ajax({
 			url : url,
@@ -9,7 +10,16 @@ $(document).ready(function(){
 			data : $('choose_start').serialize(),
 			success : function(data){
 				console.log(data);
-				$('#game_options').css('display','block');
+
+				if(data == 'true'){
+					$('#pregame').css('display','none');
+					$('#game_options').css('display','block');	
+				}
+				else{
+					alert('failed');
+				}
+				
+
 			}
 		})
 	});
