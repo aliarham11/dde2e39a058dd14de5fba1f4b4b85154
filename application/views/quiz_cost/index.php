@@ -10,6 +10,37 @@
     echo $errors;
   }
 ?>
+
+<table>
+  <thead>
+    <tr>
+      <td colspan="2">Diketahui</td>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>DWT (ton)</td>
+        <td><?php echo $question->dwt; ?></td>
+      </tr>
+      <tr>
+        <td>Harga Pelat (kg)</td>
+        <td><?php echo $question->harga_pelat; ?></td>
+      </tr>
+      <tr>
+        <td>Machinery cost (KW)</td>
+        <td><?php echo $question->machinery_cost; ?></td>
+      </tr>
+      <tr>
+        <td>Construction cost / kg</td>
+        <td><?php echo $question->construction_cost; ?></td>
+      </tr>
+      <tr>
+        <td>Nilai tukar rupiah terhadap / 1US Dollar</td>
+        <td><?php echo $question->tukar_dolar; ?></td>
+      </tr>
+  </tbody>
+</table>
+<br/>
 <form action="<?php echo base_url();?>quiz_cost/submit" method="POST">
   <table>
     <thead>
@@ -25,8 +56,7 @@
           <tr>
             <td><?php echo $answer->name; ?></td>
             <td>
-             <input type="text" name="value[<?php echo $answer->part_id;?>]" value="<?php echo $answer->estimate; ?>"/>
-             <input type="hidden" name="record_id[<?php echo $answer->part_id;?>]" value="<?php echo $answer->part_id; ?>"/>
+             <input type="text" name="estimate[<?php echo $answer->part_id;?>]" value="<?php echo $answer->estimate; ?>"/>
             </td>
           </tr>
       <?php

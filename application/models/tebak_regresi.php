@@ -76,7 +76,7 @@ class Tebak_regresi extends CI_Model {
       $data["game_id"] = $game_id;
       $data["dwt"] = rand ( 5000 , 9999 );
       $data["act_wst"] = $this->generate_wst($data["dwt"]);
-      $data["act_engine_power"] = $this->engine_power($data["dwt"]);
+      $data["act_engine_power"] = $this->generate_engine_power($data["dwt"]);
       $data["act_type_of_engine"] = $this->katalog_engine->get_engine($data["act_engine_power"]);
       $data["act_lwt"] = $this->generate_lwt($data["dwt"]);
       $this->insert($data);

@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Ship_parts extends CI_Model {
+class Ship_part extends CI_Model {
 	private $pk_col = 'ship_parts.id';
 	private $table_name = 'ship_parts';
 
