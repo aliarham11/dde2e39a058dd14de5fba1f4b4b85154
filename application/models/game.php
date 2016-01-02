@@ -41,6 +41,7 @@ class Game extends CI_Model {
 		if ($query){
 			$this->db->where("$query");
 		}
+
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -83,5 +84,15 @@ class Game extends CI_Model {
 		$data["finish"] = true;
 		$this->update($data, $id);
 		return $data["total_score"];
+	}
+
+	public function score($level, $user_id)
+	{
+		$sql = 'select sum(games.score_parts) as score_parts, sum(questions.score_cost) as score_costs, sum(tebak_regresis.score) as score_regresi 
+				from games left join questions on games.id = questions.game_id
+				left join tebak_regresis on games.id = tebak_regresis.game_id
+				where games.user_id = '.$user_id.' and games.level_id = '.$level.'';
+		$query = $this->db->query($sql);
+		return $query->result_array();
 	}
 }

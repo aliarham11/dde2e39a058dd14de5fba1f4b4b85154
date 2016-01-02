@@ -25,7 +25,6 @@ class Games extends CI_Controller {
 
   public function start(){
     if (need_game()){
-      $params["is_resume"] = 'true';
       redirect(base_url()."games/run");
       // $this->htmllib->add_js('pages/game.js');
       // $this->load->view('plain/default_header');
@@ -77,6 +76,7 @@ class Games extends CI_Controller {
       if ($this->input->post("game_id") != "0"){
         $game_id = $this->input->post("game_id");
         $game = $this->game->get_by_id($game_id);
+        $success = true;
       }
       else{
         $data["user_id"] = $this->session->userdata("user_id");

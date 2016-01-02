@@ -39,6 +39,7 @@ $(document).ready(function(){
 
             if(story == 4){
                 year = '2009';
+                $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/cbd_2.png');
             }
 
             var text = 'Cost Break Down Structure Kapal Baru Jenis Product Oil Tanker 6500 Dwt Tahun ' + year;
@@ -49,6 +50,17 @@ $(document).ready(function(){
             $('#interface5-table1').css('display','none');
             $('#interface5-table2').css('display','none');
         }
+
+        if(story == 5){
+            $('#interface5-header').text('Metode Estimasi Harga Kapal Baru').append('<i class="material-icons left">subtitles</i>');
+            $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/cbd_3.png');
+            $('#title-text1').css('display','block');
+            $('#title-text1').text('Metode Estimasi Harga Kapal Baru Jenis Product Oil Tanker Kategori Small Size 5.000 Dwt < X <10.000 Dwt Beserta Besar Nilai Porsentase Estimasinya');
+        }
+
+        if(story == 6){
+             window.location=$('#base_url').val() + 'quiz_cost';
+        }
         
     });
 
@@ -56,7 +68,7 @@ $(document).ready(function(){
 
 function get_table_data(argument, get_two_table) {
     console.log('asd');
-    var url = $('#base_url').val() + 'interface_5/get_table_data?label_number=' + argument;
+    var url = $('#base_url').val() + 'material_costs/get_table_data?label_number=' + argument;
     var html = '';
     $('#table1').empty();
     $.getJSON(url, function(data){
@@ -70,7 +82,7 @@ function get_table_data(argument, get_two_table) {
     });
 
     if(get_two_table){
-        url = $('#base_url').val() + 'interface_5/get_table_data?label_number=3';
+        url = $('#base_url').val() + 'material_costs/get_table_data?label_number=3';
         $('#table2').empty();
         html2 = '';
         $.getJSON(url, function(data){

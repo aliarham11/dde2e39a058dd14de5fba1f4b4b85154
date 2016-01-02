@@ -12,7 +12,7 @@ $(document).ready(function(){
 		$.ajax({
 			url : url,
 			method : 'post',
-			data : $('choose_start').serialize(),
+			data : $('#choose_start').serialize(),
 			success : function(data){
 				console.log(data);
 

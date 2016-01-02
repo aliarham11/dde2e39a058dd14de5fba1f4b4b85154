@@ -11,7 +11,12 @@
 	  <div class="grey lighten-5">
 	  		<div class="row">
 	  			<div class="col s6">
-	  				<p class="text-title">Grafik Rata-rata skor : </p>
+	  				<p class="text-title"> Grafik total skor filter by Level : </p>
+	  				<select class="col s3" name="level" id="graph-filter">
+	  					<?php foreach ($levels as $level): ?>
+	  						<option value="<?php echo $level->id; ?>"><?php echo $level->difficulty;?></option>
+	  					<?php endforeach; ?>
+	  				</select>
 	  				<canvas id="score-avg-graph"></canvas>
 	  			</div>
 	  			<div class="col s6">

@@ -26,7 +26,9 @@ class Quiz_regresi extends CI_Controller {
     }
     $this->load->model('katalog_engine');
     $params["engines"] = $this->katalog_engine->get_engines();
-    $this->load->view("quiz_regresi/index.php",$params);
+    $this->load->view('plain/default_header');
+    $this->load->view("quiz_regresi/index",$params);
+    $this->load->view('plain/default_footer');
   }
 
   public function submit(){

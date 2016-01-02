@@ -1,21 +1,31 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Interface_5 extends CI_Controller {
+class Material_costs extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->library('htmllib');
+		$this->load->model('question');
+		$this->game_sessions = need_game();
+		if ($this->game_sessions == false){
+		  redirect(base_url()."games/start");
+		}
 		// Your own constructor code
 	}
 
 	public function index(){
 
 		$data['title'] = 'Naval Game';
-
-		$this->htmllib->add_js('pages/interface_5.js');
+		$params["question"] = $this->question->get_or_create_by_game($this->game_sessions["game_id"]);
+		if ($params["question"]->score_cost != null)
+	    {
+	      $this->session->set_flashdata("notice", "permainan telah berakhir");
+	      redirect(base_url()."games/run");
+	    }
+		$this->htmllib->add_js('pages/Material_costs.js');
 		$this->load->view('plain/default_header');
-		$this->load->view('interface_5/home', $data);
+		$this->load->view('material_costs/home', $data);
 		$this->load->view('plain/default_footer');
 	}
 

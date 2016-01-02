@@ -21,7 +21,7 @@
  			</div>	
 
  			<div id="interface6-img" class="col s10 scrollable-div" style="display:none;margin-left:10%">
-	  	 		<img src="<?php echo base_url(); ?>assets/images/gb1.jpg">
+	  	 		<img id="img-data" src="<?php echo base_url(); ?>assets/images/materi/Data_Kapal.jpg">
 	  	 	</div>
 
 	  	 	<canvas id="interface6-graph" class="col s12"width="400" height="300" style="display:none"></canvas>

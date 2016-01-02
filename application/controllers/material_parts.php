@@ -1,28 +1,38 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Interface_3_4 extends CI_Controller {
+class Material_parts extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->library('htmllib');
+		$this->load->model('game');
+		$this->game_sessions = need_game();
+		if ($this->game_sessions == false){
+		  redirect(base_url()."games/start");
+		}
 		// Your own constructor code
 	}
 
 	public function index(){
 
 			$data['title'] = 'Naval Game';
-
+			$params["game"] = $this->game->where('id = '.$this->game_sessions["game_id"]);
+			if ($params["game"][0]->score_parts != null)
+		    {
+		      $this->session->set_flashdata("notice", "permainan telah berakhir");
+		      redirect(base_url()."games/run");
+		    }
 			$data['interface_chart'] = '';
-			$this->htmllib->add_js('pages/interface_3_4.js');
+			$this->htmllib->add_js('pages/material_parts.js');
 			$this->load->view('plain/default_header');
-			$this->load->view('interface_3_4/home', $data);
+			$this->load->view('material_parts/home', $data);
 			$this->load->view('plain/default_footer', $data);	
 
 	}
 
 	public function json_operation($type=''){
-		$this->load->model('ship_parts','ship');
+		// $this->load->model('ship_parts','ship');
 		if($type == 'json'){
 
 			//Data for Interface 3, load from DB or Custom Init

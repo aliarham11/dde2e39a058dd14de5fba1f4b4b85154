@@ -7,6 +7,7 @@ class Users extends CI_Controller {
 		parent::__construct();
 		$this->load->library('htmllib');
 		$this->load->model('level');
+		$this->load->model('game');
 		// Your own constructor code
 	}
 
@@ -60,6 +61,16 @@ class Users extends CI_Controller {
 		$this->load->view('plain/default_header');
 		$this->load->view('dashboard',$params);
 		$this->load->view('plain/default_footer');
+	}
+
+	public function get_score()
+	{
+
+
+		$score = $this->game->score($this->input->post('level'), $this->session->userdata('user_id'));
+
+		echo json_encode($score);
+		# code...
 	}
 }
 

@@ -17,6 +17,15 @@ class Quiz_parts extends CI_Controller {
     // Your own constructor code
   }
 
+  public function index()
+  {
+    $params['parts'] = $this->tebak_part->get_or_create_by_game($this->game_sessions["game_id"]);
+    $this->htmllib->add_js('pages/quiz_parts.js');
+    $this->load->view('plain/default_header');
+    $this->load->view('quiz_parts/index', $params);
+    $this->load->view('plain/default_footer');
+  }
+
   public function knowledge(){
     $parts = $this->ship_part->where();
     $json_parts = array();
@@ -41,7 +50,7 @@ class Quiz_parts extends CI_Controller {
     //input berupa text yang berisi nama part dengan name answer[$id]
     $answers = $this->input->post("answer");
     foreach ($answers as $key => $answer) {
-      $data["answer"] = $answers[$i];
+      $data["answer"] = $answers[$key];
       $id = $key;
       $this->tebak_part->update($data, $id);
     }
@@ -52,7 +61,7 @@ class Quiz_parts extends CI_Controller {
       redirect(base_url()."games/run");
     }
     else{
-      //redirect(base_url()."quiz_parts/index");
+      redirect(base_url()."quiz_parts/index");
       //redirect ke permainan
     }
   }

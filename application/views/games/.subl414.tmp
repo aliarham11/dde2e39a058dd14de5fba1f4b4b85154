@@ -1,5 +1,9 @@
 <section id="container">
-
+<div class="row">
+	<div class="col s12 grey darken-4">
+		<h5 class="white-text">Naval Game</h5>
+	</div>
+</div> 	
  
 	<div class="container z-depth-3">
 	  <nav>
@@ -7,15 +11,14 @@
 	      <a href="#!" class="brand-logo text-title" id="question_header">
 	      	Game Start<i class="material-icons left">swap_vertical_circle</i>
 	      </a>
-	      <input type="hidden" id="resume" value="<?php echo $is_resume ?>">
 	    </div>
 	  </nav>	
 	  <div class="grey lighten-5">
 	  	<div class="row">
-	  		<div class="col s12" id="pregame">
+	  		<div class="col s12" id="pregame" style="display:none">
 	  			<form id="choose_start">
-	  			<?php if(isset($games) && $games): ?>
-	  				<p class="text-title">Resume Game : </p>
+	  			<?php if(isset($games)): ?>
+	  				<p class="text-title">Kamu punya permainan yang belum terselesaikan : </p>
 	  				<?php foreach ($games as $game): ?>
 	  					<p>
 					 	   <input name="game_id" type="radio" value="<?php echo $game->id; ?>" id="<?php echo $game->id; ?>"/>
@@ -26,7 +29,7 @@
 	  				<p>Hello Pemula! Silahkan mulai game baru</p>
   				<?php endif;  ?>
   					<p>
-				 	   <input name="game_id" type="radio" value="0" id="0" checked="true" />
+				 	   <input name="game_id" type="radio" value="0" id="0" checked="checked" />
 				 	   <label for="0">Mulai Baru</label>
 						</p>
 	  				<p>
@@ -37,7 +40,7 @@
 	  				</form>
 	  			</div>
 	  		
-		  		<div class="col s12" id="game_options" style="display: none">
+		  		<div class="col s12" id="game_options" style="display: block">
 			  		<p>
 							<?php
 							  if (isset($notice)){
@@ -49,7 +52,7 @@
 		  			<div class="row">
 		        <div class="col s4">
 		          <div class="card">
-		            <div class="card-image" style="height:200px">
+		            <div class="card-image">
 		              <img src="<?php base_url() ?>/naval/assets/images/shipparts.png">
 		              <span class="card-title blue-text">Tebak Parts</span>
 		            </div>
@@ -58,15 +61,15 @@
 		              I am convenient because I require little markup to use effectively.</p>
 		            </div>
 		            <div class="card-action">
-		              <a href="<?php echo base_url();?>material_parts">Mulai</a>
+		              <a href="<?php echo base_url();?>quiz_parts">Mulai</a>
 		            </div>
 		          </div>
 		        </div>
 
 		        <div class="col s4">
-		          <div class="card" >
-		            <div class="card-image" style="height:200px">
-		              <img src="<?php base_url() ?>/naval/assets/images/regression.png">
+		          <div class="card">
+		            <div class="card-image">
+		              <img src="<?php base_url() ?>/naval/assets/images/regression.jpg">
 		              <span class="card-title blue-text">Tebak Regresi</span>
 		            </div>
 		            <div class="card-content">
@@ -74,14 +77,14 @@
 		              I am convenient because I require little markup to use effectively.</p>
 		            </div>
 		            <div class="card-action">
-		              <a href="<?php echo base_url();?>material_regresi">Mulai</a>
+		              <a href="<?php echo base_url();?>quiz_regresi">Mulai</a>
 		            </div>
 		          </div>
 		        </div>
 
 		        <div class="col s4">
-		          <div class="card" >
-		            <div class="card-image" style="height:200px">
+		          <div class="card">
+		            <div class="card-image">
 		              <img src="<?php base_url() ?>/naval/assets/images/shipcost.jpg">
 		              <span class="card-title blue-text">Tebak Cost</span>
 		            </div>
@@ -90,7 +93,7 @@
 		              I am convenient because I require little markup to use effectively.</p>
 		            </div>
 		            <div class="card-action">
-		              <a href="<?php echo base_url();?>material_costs">Mulai</a>
+		              <a href="<?php echo base_url();?>quiz_cost">Mulai</a>
 		            </div>
 		          </div>
 		        </div>

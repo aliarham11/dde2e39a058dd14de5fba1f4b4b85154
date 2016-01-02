@@ -6,45 +6,41 @@ $(document).ready(function(){
     $('#interface6-btn-nav').click(function(){
 
         story++;
+        $('#interface6-img').css('display','block');
+        $('#interface6-chart').css('display','none');
+        $('#interface6-notes').css('display','none');
+        $('#interface6-graph').css('display','none');
 
-        if(story == 2 || story == 4){
-            $('#interface6-img').css('display','block');
-            $('#interface6-chart').css('display','none');
-            $('#interface6-notes').css('display','none');
-            $('#interface6-graph').css('display','none');
+        // if(story == 2 || story == 4){
             
-            if(story == 2){
-              $('#interface6-title p').text('Data Kapal Yang Digunakan Sebagai Pembentuk Pengetahuan Dan Kemahiran');  
-            }
-
-            if(story == 4){
-              $('#interface6-title p').text('Katalog Mesin');   
-            }
+            
+        if(story == 2){
+          $('#interface6-title p').text('Data Kapal Yang Digunakan Sebagai Pembentuk Pengetahuan Dan Kemahiran');  
         }
 
-        if(story == 3 || story == 5 || story == 6){
-            $('#interface6-img').css('display','none');
-            $('#interface6-chart').css('display','none');
-            $('#interface6-notes').css('display','none');
-            $('#interface6-graph').css('display','block');
-            
-            if(story == 3){
-              $('#interface6-title p').text('Hasil Analisis Data Dalam Representasi Regresi Pada Driving Parameters');
-            }
-
-            if(story == 5){
-              $('#interface6-title p').text('Light Weight');
-            }
-
-            if(story == 6){
-              $('#interface6-title p').text('Weight of Steel');
-            }
-            
-            get_interface6_graph();
+        if(story == 3){  
+         $('#interface6-title p').text('Hasil Analisis Data Dalam Representasi Regresi Pada Driving Parameters');
+         $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/1.png');
         }
+
+        if(story == 4){
+          $('#interface6-title p').text('Katalog Mesin');   
+          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/Katalog Mesin.jpg');
+        }
+
+        if(story == 5){
+          $('#interface6-title p').text('Light Weight');   
+          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/2.png');
+        }
+
+        if(story == 6){
+          $('#interface6-title p').text('Weight of Steel');   
+          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/3.png');
+        }
+ 
 
         if(story == 7){
-          window.location=$('#base_url').val() + 'interface_6/tables';
+          window.location=$('#base_url').val() + 'material_regresi/tables';
         }
 
 
@@ -54,7 +50,7 @@ $(document).ready(function(){
 })
 
 function get_interface6_chart(){
-    url = $('#base_url').val() + 'interface_6/get_chart'
+    url = $('#base_url').val() + 'material_regresi/get_chart'
 
     $.getJSON(url, function(data) {
         console.log(data);

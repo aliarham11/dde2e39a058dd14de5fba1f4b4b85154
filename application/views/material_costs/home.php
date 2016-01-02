@@ -27,7 +27,7 @@
 
  			</div>	
 	  	 	<div id="interface5-img" class="col s10 scrollable-div" style="display:none;margin-left:10%">
-	  	 		<img src="<?php echo base_url(); ?>assets/images/gb1.jpg">
+	  	 		<img id="img-data" src="<?php echo base_url(); ?>assets/images/materi/cbd_1.png">
 	  	 	</div>
 	  	</div>
 	  	<div class="row">

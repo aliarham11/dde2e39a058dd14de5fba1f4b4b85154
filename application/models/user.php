@@ -32,4 +32,6 @@ class User extends CI_Model {
 		$query = $this->db->get();
 		return $query->first_row();
 	}
+
+	
 }

@@ -36,8 +36,9 @@
 <?php if(need_login()): ?>
 <div class="row">
     <div class="col s12 grey darken-4">
-        <h5 class="white-text" style="float:left">Naval Game</h5>
+        <a href="<?php echo base_url() ?>"><h5 class="white-text" style="float:left">Naval Game<i class="material-icons left">play_circle_outline</i></h5></a>
         <a href="<?php echo base_url() ?>base/logout" class="white-text" style="float:right"><h5>Logout<i class="material-icons left">not_interested</i></h5></a>
     </div>
 </div>  
 <?php endif; ?>
+

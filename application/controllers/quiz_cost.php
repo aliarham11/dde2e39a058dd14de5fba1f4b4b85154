@@ -21,7 +21,9 @@ class Quiz_cost extends CI_Controller {
     $params["notice"] = get_notice();
     $params["question"] = $this->question->get_or_create_by_game($this->game_sessions["game_id"]);
     $params["answers"] = $this->answer->get_or_create_by_question($params["question"]->id);
-    $this->load->view("quiz_cost/index.php",$params);
+    $this->load->view('plain/default_header');
+    $this->load->view("quiz_cost/index",$params);
+    $this->load->view('plain/default_footer');
   }
 
   public function submit(){
@@ -36,7 +38,7 @@ class Quiz_cost extends CI_Controller {
     {
       $level_sessioins = need_level();
       $margin = get_margin($level_sessioins["level_id"]);
-      $this->answer->calculate_score_by_question($question->id, $margin);
+      $this->answer->calculate_score_by_questions($question->id, $margin);
       $this->session->set_flashdata("notice", "permainan telah berakhir");
       redirect(base_url()."games/run");
     }

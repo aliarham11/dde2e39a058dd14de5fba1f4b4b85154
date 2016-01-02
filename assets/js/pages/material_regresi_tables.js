@@ -30,6 +30,10 @@ $(document).ready(function(){
           $('.table4').css('display','table');      
         }
 
+        if(story == 5){
+             window.location=$('#base_url').val() + 'quiz_regresi';
+        }
+
     });
 
 })
