@@ -71,7 +71,7 @@ class Tebak_regresi extends CI_Model {
 
   public function get_or_create_by_game($game_id){
     $query = $this->where("tebak_regresis.game_id = '$game_id'");
-    if (count($query) == 0){margin_percentage
+    if (count($query) == 0){
       $this->load->model("katalog_engine");
       $data["game_id"] = $game_id;
       $data["dwt"] = rand ( 5000 , 9999 );
