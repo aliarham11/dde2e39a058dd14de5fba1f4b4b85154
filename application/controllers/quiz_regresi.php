@@ -17,15 +17,12 @@ class Quiz_regresi extends CI_Controller {
   }
 
   public function index(){
+    $level_sessions = need_level();
     $params["notice"] = get_notice();
     $params["tebak_regresi"] = $this->tebak_regresi->get_or_create_by_game($this->game_sessions["game_id"]);
-    if ($params["tebak_regresi"]->score != null)
-    {
-      $this->session->set_flashdata("notice", "permainan telah berakhir");
-      redirect(base_url()."games/run");
-    }
     $this->load->model('katalog_engine');
     $params["engines"] = $this->katalog_engine->get_engines();
+    $params["margin_percentage"] = get_margin($level_sessions["level_id"]);
     $this->load->view('plain/default_header');
     $this->load->view("quiz_regresi/index",$params);
     $this->load->view('plain/default_footer');
@@ -43,7 +40,8 @@ class Quiz_regresi extends CI_Controller {
       $margin = get_margin($level_sessioins["level_id"]);
       $this->tebak_regresi->calculate_score_by_game($this->game_sessions["game_id"], $margin);
       $this->session->set_flashdata("notice", "permainan telah berakhir");
-      redirect(base_url()."games/run");
+      //redirect(base_url()."games/run");
+      redirect(base_url()."quiz_regresi/index");
     }
     else{
       redirect(base_url()."quiz_regresi/index");
