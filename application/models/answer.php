@@ -65,14 +65,18 @@ class Answer extends CI_Model {
 		return $query->result();
 	}
 
-	public function calculate_score_by_questions($question_id, $margin){
+	public function calculate_score_by_questions($question_id, $margin_percentage){
 		$answer_parts = $this->answer_parts($question_id);
     if (count($answer_parts) > 0){
       $correct = 0;
     	foreach ($answer_parts as $answer) {
-    		$margin = $answer->actual * $margin / 100;
-    		$diff = $answer->actual - $answer->estimate;
-      	if(abs($diff) < $margin) $correct ++;
+    		if($answer->actual == null) $correct++;
+    		else
+    		{
+	    		$margin = $answer->actual * $margin_percentage / 100;
+	    		$diff = $answer->actual - $answer->estimate;
+	      	if(abs($diff) < $margin) $correct ++;
+      	}
     	}
       $data["score_cost"] = 100 * $correct / 31;
       $this->load->model("question");

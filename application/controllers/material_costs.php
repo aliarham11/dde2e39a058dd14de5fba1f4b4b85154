@@ -23,7 +23,7 @@ class Material_costs extends CI_Controller {
 	      $this->session->set_flashdata("notice", "permainan telah berakhir");
 	      redirect(base_url()."games/run");
 	    }
-		$this->htmllib->add_js('pages/Material_costs.js');
+		$this->htmllib->add_js('pages/material_costs.js');
 		$this->load->view('plain/default_header');
 		$this->load->view('material_costs/home', $data);
 		$this->load->view('plain/default_footer');
@@ -38,6 +38,6 @@ class Material_costs extends CI_Controller {
 		# code...
 	}
 
-	
+
 }
 
