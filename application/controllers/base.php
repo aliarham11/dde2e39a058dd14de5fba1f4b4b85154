@@ -36,7 +36,7 @@ class Base extends CI_Controller {
 
 	public function login(){
 		if(need_login()){
-			redirect(base_url()."users/dashboard");
+			redirect(base_url()."intro");
 		}
 		$params["alert"] = get_alert();
 		$this->load->view('plain/default_header');
@@ -69,7 +69,7 @@ class Base extends CI_Controller {
 			if (count($user) > 0){
 				$this->session->set_userdata("user_id",$user->id);
 				$this->session->set_userdata("user_name",$user->username);
-				redirect(base_url()."users/dashboard");
+				redirect(base_url()."intro");
 			}
 			else{
 				$this->session->set_flashdata("alert","Username dan password tidak cocok");
