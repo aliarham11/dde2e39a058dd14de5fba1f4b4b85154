@@ -5,7 +5,7 @@
 	  <nav>
 	     <div class="nav-wrapper blue darken-3">
 	      <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="interface3-header">
-	      	Quiz Tebak Parts<i class="material-icons left">call_missed</i>
+	      	Evaluasi Pemahaman Dan Identifikasi Komponen Biaya (Cost Breakdown Structure)<i class="material-icons left">call_missed</i>
 	      </a>
 	      
 	    </div>
@@ -13,7 +13,7 @@
 	  <div class="grey lighten-5">
 	  	<div class="row" id="interface3-title">
 	  		<div class="col s12">
-	  			<p class="flow-text center-align" id="title_text">Silahkan jawab kolom parts sesuai dengan susunan yang tepat</p>
+	  			<p class="flow-text center-align" id="title_text">Lengkapilah kotak kosong pada gambar di bawah dengan konten komponen biaya yang telah disampaikan pada interface sebelumnya</p>
 	  		</div>
 	  	</div>
 	  	<div class="row">
@@ -28,6 +28,7 @@
 		  			<?php foreach($parts as $part): ?>	
 		  				<input type="hidden" id="part_<?php echo $part->id; ?>" name="answer[<?php echo $part->id ?>]" value="<?php echo $part->answer; ?>">
 		  			<?php endforeach; ?>
+				 		<?php if($game->score_parts == NULL): ?>
 				 		<p class="center-align">
               <input name="save" type="radio" value="0" checked="true" id="0"/>
               <label for="0">Simpan</label>
@@ -36,12 +37,19 @@
               <input name="save" type="radio" value="1" id="1"/>
               <label for="1">Simpan dan Selesai</label>
             </p>
+          	<?php endif; ?>
 
-				 		<div class="input-field center-align" style="margin-bottom:30px">
-							<button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-nav">Selesai
-			 					<i class="material-icons right">send</i>
-							</button>
-					 	</div>
+		 		<div class="input-field center-align" style="margin-bottom:30px">
+					<?php if($game->score_parts != NULL): ?>
+						<a href="<?php echo base_url(); ?>material_costs"class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-con">Next
+		 					<i class="material-icons right">send</i>
+						</a>
+					<?php else: ?>
+						<button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-nav">Selesai
+	 						<i class="material-icons right">send</i>
+						</button> 
+					<?php endif; ?>
+			 	</div>
 			  	
 		  	</form>
 	  	</div>

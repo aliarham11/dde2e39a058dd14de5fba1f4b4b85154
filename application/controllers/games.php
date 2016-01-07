@@ -23,7 +23,7 @@ class Games extends CI_Controller {
     $this->load->view('games/chose_level',$params);
   }
 
-  public function start(){
+  public function start($lvl_id=null){
     if (need_game()){
       redirect(base_url()."games/run");
       // $this->htmllib->add_js('pages/game.js');
@@ -32,7 +32,10 @@ class Games extends CI_Controller {
       // $this->load->view('plain/default_footer');
     }
     $level_id = $this->input->post("level_id");
+    // $level_id = $lvl_id;
     $level = $this->level->get_by_id($level_id);
+    // var_dump($level);
+    // exit
     if (count($level) == 0){
       $level_session = need_level();
       $level = $level_session["level"];

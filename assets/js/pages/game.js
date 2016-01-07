@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	$('#get_games').click(function(){
 
-
+		// window.location=$('#base_url').val() + 'material_parts';
 		var url = $('#base_url').val() + 'games/run';
 		$.ajax({
 			url : url,
@@ -17,8 +17,9 @@ $(document).ready(function(){
 				console.log(data);
 
 				if(data == 'true'){
-					$('#pregame').css('display','none');
-					$('#game_options').css('display','block');	
+					window.location=$('#base_url').val() + 'material_parts';
+					// $('#pregame').css('display','none');
+					// $('#game_options').css('display','block');	
 				}
 				else{
 					alert('failed');

@@ -46,7 +46,7 @@ class Quiz_cost extends CI_Controller {
       //redirect(base_url()."games/run");
     }
     else{
-      redirect(base_url()."quiz_cost/index");
+      redirect(base_url()."material_regresi");
     }
   }
 

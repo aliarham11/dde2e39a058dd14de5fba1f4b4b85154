@@ -34,6 +34,7 @@ $(document).ready(function(){
 			$('#tujuan').css('display', 'none');
 			$('#batasan').css('display', 'none');
 			$('#sistematika').css('display', 'block');
+			$('#interface2-btn-nav').text('Mulai Permainan').append('<i class="material-icons right">send</i>');
         }
  
         if(story == 5){

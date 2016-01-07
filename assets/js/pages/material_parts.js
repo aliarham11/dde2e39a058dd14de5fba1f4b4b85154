@@ -1,12 +1,13 @@
 $(document).ready(function(){
 
     var story = 0;
-
+    console.log(story);
     $('#interface3-btn-nav').click(function(){
+         console.log(story);
         story++;
         $('#interface3-story1').css('display', 'none');
 
-        $('#interface3-header').text('Komponen Biaya Pembentuk Harga Kapal Baru').append('<i class="material-icons left">subtitles</i>');
+        $('#interface3-header').text('Komponen Biaya Pembentuk (Cost Breakdown Structure) Harga Kapal Baru').append('<i class="material-icons left">subtitles</i>');
         $('#interface3-title').css('display','none');
         $('#interface3-chart').css('display','block');
 

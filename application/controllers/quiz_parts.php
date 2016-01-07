@@ -9,6 +9,7 @@ class Quiz_parts extends CI_Controller {
     parent::__construct();
     $this->load->library('htmllib');
     $this->load->model('ship_part');
+    $this->load->model('game');
     $this->load->model('tebak_part');
     $this->game_sessions = need_game();
     if ($this->game_sessions == false){
@@ -19,6 +20,7 @@ class Quiz_parts extends CI_Controller {
 
   public function index()
   {
+    $params["game"] = $this->game->get_by_id($this->game_sessions["game_id"]);
     $params['parts'] = $this->tebak_part->get_or_create_by_game($this->game_sessions["game_id"]);
     $this->htmllib->add_js('pages/quiz_parts.js');
     $this->load->view('plain/default_header');
@@ -56,12 +58,13 @@ class Quiz_parts extends CI_Controller {
     }
     if ($this->input->post("save") == "1")
     {
+
       $this->tebak_part->calculate_score_by_game($this->game_sessions["game_id"]);
       $this->session->set_flashdata("notice", "permainan telah berakhir");
-      redirect(base_url()."games/run");
+      redirect(base_url()."quiz_parts/index");
     }
     else{
-      redirect(base_url()."quiz_parts/index");
+      redirect(base_url()."material_costs");
       //redirect ke permainan
     }
   }
