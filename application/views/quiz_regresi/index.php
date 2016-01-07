@@ -8,7 +8,7 @@
     <nav>
       <div class="nav-wrapper blue darken-3">
         <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="question_header">
-          Quis Regresi<i class="material-icons left">warning</i>
+          Evaluasi Kemahiran (Intuisi) Identifikasi Dan Analisis Driving Parameters<i class="material-icons left">warning</i>
         </a>
       </div>
     </nav>  

@@ -1,45 +1,77 @@
 $(document).ready(function(){
 
-    var story = 1;
-    get_interface6_chart();
+    var story = 0;
+
+    $('#interface6-title p').css('display','none');
+    $('#interface6-img').css('display','none');
+    $('#interface6-chart').css('display','none');
+    $('#interface6-notes').css('display','none');
+    $('#interface6-graph').css('display','none'); 
+
+    
+
+
     
     $('#interface6-btn-nav').click(function(){
 
         story++;
-        $('#interface6-img').css('display','block');
-        $('#interface6-chart').css('display','none');
-        $('#interface6-notes').css('display','none');
-        $('#interface6-graph').css('display','none');
-
-        // if(story == 2 || story == 4){
-            
-            
-        if(story == 2){
-          $('#interface6-title p').text('Data Kapal Yang Digunakan Sebagai Pembentuk Pengetahuan Dan Kemahiran');  
+        if(story == 1){
+          get_interface6_chart();
+          $('#interface6-header').text('Interface 6.1').append('<i class="material-icons left">call_missed</i>');
+          $('#interface6-title p').css('display','block');
+          $('#interface6-intro').css('display','none');
+          $('#interface6-chart').css('display','block');
+          $('#interface6-notes').css('display','block');
+          $('#interface6-graph').css('display','none');  
+        }
+        
+        if (story == 2) {
+          $('#interface6-title p').text('Keterangan Pemahaman');
+          $('#interface6-chart').css('display','none');
+          $('#interface6-notes').css('display','none');
+          $('#interface6-content').css('display','block');
         }
 
-        if(story == 3){  
-         $('#interface6-title p').text('Hasil Analisis Data Dalam Representasi Regresi Pada Driving Parameters');
-         $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/1.png');
-        }
+        if (story == 3) {
+          $('#interface6-header').text('Interface 6.2').append('<i class="material-icons left">call_missed</i>');
+          $('#interface6-title p').text('Pahami trendline dan formulasi hasil analisa 3 parameter berikut');
+          $('#interface6-content').css('display','none');
+          $('#interface6-intro2').css('display','block');
+        }   
+            
+        // if(story == 4){
+        //   $('#interface6-title p').text('Data Kapal Yang Digunakan Sebagai Pembentuk Pengetahuan Dan Kemahiran');  
+        //   $('#interface6-intro').css('display','none');
+        //   $('#interface6-img').css('display','block');
+        //   $('#interface6-chart').css('display','none');
+        //   $('#interface6-notes').css('display','none');
+        //   $('#interface6-graph').css('display','none');  
+        // }
 
-        if(story == 4){
-          $('#interface6-title p').text('Katalog Mesin');   
-          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/Katalog Mesin.jpg');
+        if(story == 4){  
+          $('#interface6-intro2').css('display','none');
+          $('#interface6-img').css('display','block');
+         $('#interface6-title p').text('Formula Regresi Dwt- Wst');
+         $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/3.png');
         }
 
         if(story == 5){
-          $('#interface6-title p').text('Light Weight');   
-          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/2.png');
+          $('#interface6-title p').text('Formula Dwt – Power Needs');   
+          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/1.png');
         }
 
         if(story == 6){
-          $('#interface6-title p').text('Weight of Steel');   
-          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/3.png');
+          $('#interface6-title p').html('Tabel berikut adalah katalog mesin yang akan digunakan <br /> Gunakan type of engine yang memiliki simpangan atas terdekat dari power needs yang dibutuhkan <br /> Sebagai contoh jika formula regresi menunjukkan angka 2500 kw, maka gunakan type engine dengan power 2720');   
+          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/Katalog Mesin.jpg');
+        }
+
+        if(story == 7){
+          $('#interface6-title p').text('Formula Regresi Dwt - Lwt');   
+          $('#img-data').attr('src',$('#base_url').val() + 'assets/images/materi/2.png');
         }
  
 
-        if(story == 7){
+        if(story == 8){
           window.location=$('#base_url').val() + 'material_regresi/tables';
         }
 

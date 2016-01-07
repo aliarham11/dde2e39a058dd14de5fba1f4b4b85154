@@ -4,7 +4,7 @@
 	  <nav>
 	     <div class="nav-wrapper blue darken-3">
 	      <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="interface6-header">
-	      	Driving Parameters<i class="material-icons left">call_missed</i>
+	      	Interface 6<i class="material-icons left">call_missed</i>
 	      </a>
 	      
 	    </div>
@@ -16,6 +16,29 @@
 	  		</div>
 	  	</div>
 	  	<div class="row">
+	  		<div id="interface6-intro" class="col s12">
+	  			<p class="flow-text center-align">
+	  				Pada interface 6 ini, user akan mendapatkan informasi seputar driving parameters, pendekatan nilai driving parameters pada kapal product oil tanker 5000-9999 dwt dan tata cara perhitungan untuk melakukan estimasi harga kapal baru
+	  			</p>
+	  		</div>
+
+	  		<ol id="interface6-content" style="display:none">
+				<li>Dwt adalah salah satu parameter yang dapat digunakan untuk menentukan besar nilai wst (berat pelat dan profil baja) yang terpasang di kapal, kemudian dengan mempertimbangkan biaya berat pelat dan profil baja yang terpasang maka biaya total hull part dapat ditentukan dengan tata cara perhitungan yang akan disampaikan di interface 6.3.</li>
+				<li>Dwt adalah salah satu parameter yang dapat digunakan untuk menentukan besar nilai engine power used yang digunakan di kapal. Engine power used yang digunakan memiliki pola hubungan biaya dengan propulsion system and accessories . Kemudian dengan mempertimbangkan biaya propulsion system and accessories yang terpasang maka biaya total machinery part dapat ditentukan dengan tata cara perhitungan yang akan disampaikan di interface 6.3.</li>
+				<li>Dwt adalah salah satu parameter yang dapat digunakan untuk menentukan besar nilai besar nilai lwt (lightweight) pada kapal. Lwt memiliki pola hubungan biaya dengan construction cost yang akan disampaikan di interface 6.3.</li>
+				<li>Salah satu komponen biaya yang memiliki porsentase besar adalah electric part, dengan mempertimbangkan biaya hull part maka biaya electric part dapat ditentukan dengan tata cara perhitungan yang akan disampaikan di interface 6.3.</li>
+				<li>Setelah mendapatkan nilai beberapa komponen yang identik dengan pola driving parameters, maka komponen biaya yang lain hingga harga total kapal dapat diidentifikasi. Perhitungan secara komprehensif mengenai estimasi harga kapal baru akan disampaikan pada interface 6.3</li>
+
+	  		</ol>
+
+	  		<div id="interface6-intro2" style="display:none" class="col s12">
+	  			<p class="center-align">
+	  				<br />
+					Formulasi tersebut akan menjadi acuan anda dalam menentukan nilai parameter sebagai pola yang berhubungan dengan komponen biaya pembentuk (cost breakdown structure) harga kapal baru khusus product oil tanker 5000-9999 dwt
+
+	  			</p>
+	  		</div>
+
 	  		<div id="interface6-chart" class="col s12">
 
  			</div>	

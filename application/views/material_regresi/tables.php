@@ -5,7 +5,7 @@
 	  <nav>
 	     <div class="nav-wrapper blue darken-3">
 	      <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="interface6-header">
-	      	Driving Parameters<i class="material-icons left">call_missed</i>
+	      	Interface 6.3<i class="material-icons left">call_missed</i>
 	      </a>
 	      
 	    </div>
@@ -17,6 +17,16 @@
 	  		</div>
 	  	</div>
 	  	<div class="row">
+	  		<div id="interface6-intro" class="col s12">
+	  			<p class="flow-text center-align">
+					Berikut adalah tata cara perhitungan melakukan estimasi harga kapal baru khusus product oil tanker 5000-9999 dwt
+					<br />
+					<br />
+					Pahami secara teliti karena perhitungan ini adalah dasar estimasi yang akan anda gunakan dalam simulasi melakukan estimasi harga kapal baru
+
+	  			</p>
+	  		</div>
+
 	  		<div id="interface6-table1" class="col s10">
 	  			<table class="striped" style="text-align:center;margin-left:10%" id="table1">
 	  				<thead>
@@ -145,7 +155,7 @@
 
 	  			  <table class="striped table4" style="text-align:center;margin-left:10%">
 		  			<thead>
-		  					<th colspan="2" class="center-align">INSEPCTION & SUERVEY COST</th>
+		  					<th colspan="2" class="center-align">INDIRECT COST</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
 		  						<td class="center-align">Keteraga Biaya / Harga</td>
@@ -166,14 +176,15 @@
 
 	  				<table class="striped table4" style="text-align:center;margin-left:10%">
 		  			<thead>
-		  					<th colspan="2" class="center-align">LAUNCHING & TESTING</th>
+		  					<th colspan="2" class="center-align">MARGIN FOR PROFIT</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
 		  						<td class="center-align">Keteraga Biaya / Harga</td>
 		  					</tr>
 		  				</thead>
 		  				<tbody>
-		  				<tr><td>MARGIN FOR PROFIT</td><td>	5% dari (direct cost + undirect cost)</td></tr>
+			  				<tr><td>MARGIN FOR PROFIT</td><td>	5% dari (direct cost + undirect cost)</td></tr>
+			  				<tr><td>GRAND TOTAL = HARGA KAPAL BARU</td><td>(direct cost + undirect cost + margin cost)</td></tr>
 		  				</tbody>
 
 	  				</table> 

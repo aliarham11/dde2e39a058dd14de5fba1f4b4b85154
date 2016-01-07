@@ -10,9 +10,11 @@
   <div class="container z-depth-3">
     <nav>
       <div class="nav-wrapper blue darken-3">
-        <a href="#!" class="brand-logo text-title" id="question_header">
-          Quis Tebak Cost<i class="material-icons left">perm_identity</i>
-        </a>
+        <div class="row">
+          <a href="#!" class="brand-logo col s12" id="question_header" style="font-size: large;">Simulasi estimasi harga kapal baru jenis product oil tanker 5.000 dwt < x < 10.000 dwt <i class="material-icons left">perm_identity</i>
+            
+          </a>
+        </div>
       </div>
     </nav>
     <div class="grey lighten-5">

@@ -41,10 +41,10 @@ class Quiz_regresi extends CI_Controller {
       $this->tebak_regresi->calculate_score_by_game($this->game_sessions["game_id"], $margin);
       $this->session->set_flashdata("notice", "permainan telah berakhir");
       //redirect(base_url()."games/run");
-      redirect(base_url()."users/dashboard");
+      redirect(base_url()."quiz_regresi/index");
     }
     else{
-      redirect(base_url()."quiz_regresi/index");
+      redirect(base_url()."quiz_cost");
     }
   }
 

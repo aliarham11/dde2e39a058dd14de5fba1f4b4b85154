@@ -79,7 +79,7 @@ $(document).ready(function(){
         }
 
         if(story == 7){
-             window.location=$('#base_url').val() + 'quiz_cost';
+             window.location=$('#base_url').val() + 'material_regresi';
         }
         
     });
