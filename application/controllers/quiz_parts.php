@@ -47,7 +47,7 @@ class Quiz_parts extends CI_Controller {
     }
     echo json_encode($json_parts);
   }
-
+  
   public function submit(){
     //input berupa text yang berisi nama part dengan name answer[$id]
     $answers = $this->input->post("answer");

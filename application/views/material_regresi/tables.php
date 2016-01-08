@@ -45,23 +45,23 @@
 
 
 							<tr><td>Hull outfit, deck machiney and accommodation</td>
-							<td>50% dari driving parameter WST</td>
+							<td>50% dari biaya steel and plate</td>
 							</tr>
 
 							<tr><td>Piping, valves and fittings</td>
-							<td>35% dari driving parameter WST</td>
+							<td>35% dari biaya steel and plate</td>
 							</tr>
 
 							<tr><td>Cago tank coating, painting & cathodic rotection</td>
-							<td>10% dari driving parameter WST</td>
+							<td>10% dari biaya steel and plate</td>
 							</tr>
 
 							<tr><td>Fire fighting, life saving and safety equipment</td>
-							<td>10% dari driving parameter WST</td>
+							<td>10% dari biaya steel and plate</td>
 							</tr>
 
 							<tr><td>Hull spare part, tool, and inventory</td>
-							<td>2,5% dari driving parameter WST</td>
+							<td>2,5% dari biaya steel and plate</td>
 							</tr>
 	  				</tbody>
 	  			</table>
@@ -80,16 +80,16 @@
 									<td>-	Nilai didapatkan dengan menggunakan pengetahuan KW engine diesel yang terpasang dikali dengan nilai harga per KW yang diketahui.<br />-	Biaya propulsion system and accessories keseluruhan sebesar (1 per 0,79) dari nilai pada keterangan di atas.</td></tr>
 
 									<tr><td>Auxiliary diesel engine and accessories</td>
-									<td>33% dari driving parameter Power needs</td></tr>
+									<td>33% dari biaya Propulsion system and accessories</td></tr>
 
 									<tr><td>Other machinery & outfit in E/R</td>
-									<td>37,5% dari driving parameter Power needs</td></tr>
+									<td>37,5% dari Propulsion system and accessories</td></tr>
 
 									<tr><td>Pipe, valves, and fitting</td>
-									<td>16,7% dari driving parameter Power needs</td></tr>
+									<td>16,7% dari Propulsion system and accessories</td></tr>
 
 									<tr><td>Machinery spare part and tool</td>
-									<td>4,2% dari driving parameter Power needs</td></tr>
+									<td>4,2% dari Propulsion system and accessories</td></tr>
 
 		  				</tbody>
 

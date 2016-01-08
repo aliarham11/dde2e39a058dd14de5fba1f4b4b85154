@@ -63,6 +63,23 @@ class Users extends CI_Controller {
 		$this->load->view('plain/default_footer');
 	}
 
+	public function endgame($value='')
+	{
+		// if (($level_session = need_level())){
+	 //      redirect(base_url()."games/start");
+	 //    }
+	    $params["notice"] = get_notice();
+	    $params["levels"] = $this->level->where();
+	    $params['user_name'] = $this->session->userdata("user_name");
+
+	    $this->htmllib->add_js('pages/endgame.js');
+		$this->load->view('plain/default_header');
+		$this->load->view('endgame',$params);
+		$this->load->view('plain/default_footer');
+
+		# code...
+	}
+
 	public function get_score()
 	{
 

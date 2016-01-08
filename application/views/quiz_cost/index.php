@@ -142,7 +142,7 @@
                   else
                   {
                 ?>
-                    <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."games/run";?>"> Next</a>
+                    <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."users/endgame";?>"> Next</a>
                 <?php
                   }
                 ?>

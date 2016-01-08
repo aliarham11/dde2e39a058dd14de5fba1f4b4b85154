@@ -191,7 +191,7 @@
               else{
             ?>
               <div class="input-field center-align" style="margin-bottom:30px">
-                <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."games/run";?>"> Next</a>
+                <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."quiz_cost";?>"> Next</a>
               </div>
             <?php
               }

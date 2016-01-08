@@ -17,12 +17,12 @@ class Material_parts extends CI_Controller {
 	public function index(){
 
 			$data['title'] = 'Naval Game';
-			$params["game"] = $this->game->where('id = '.$this->game_sessions["game_id"]);
-			if ($params["game"][0]->score_parts != null)
-		    {
-		      $this->session->set_flashdata("notice", "permainan telah berakhir");
-		      redirect(base_url()."games/run");
-		    }
+			// $params["game"] = $this->game->where('id = '.$this->game_sessions["game_id"]);
+			// if ($params["game"][0]->score_parts != null)
+		 //    {
+		 //      $this->session->set_flashdata("notice", "permainan telah berakhir");
+		 //      redirect(base_url()."games/run");
+		 //    }
 			$data['interface_chart'] = '';
 			$this->htmllib->add_js('pages/material_parts.js');
 			$this->load->view('plain/default_header');

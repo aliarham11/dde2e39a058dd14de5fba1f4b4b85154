@@ -9,37 +9,41 @@
 	    </div>
 	  </nav>	
 	  <div class="grey lighten-5">
+	  	<form action="<?php echo base_url();?>games/start" method="POST">
 	  		<div class="row">
-	  			<div class="col s6">
-	  				<p class="text-title"> Grafik total skor filter by Level : </p>
-	  				<select class="col s3" name="level" id="graph-filter">
-	  					<?php foreach ($levels as $level): ?>
-	  						<option value="<?php echo $level->id; ?>"><?php echo $level->difficulty;?></option>
-	  					<?php endforeach; ?>
-	  				</select>
-	  				<canvas id="score-avg-graph"></canvas>
-	  			</div>
-	  			<div class="col s6">
+	  			<div class="col s12">
 	  				<p class="text-title">Pilih Level Games : </p>
-	  				<form action="<?php echo base_url();?>games/start" method="POST">
+	  				
 						  <?php
 						    foreach ($levels as $level) {
 						  ?>
 
 					  		<p>
 							    <input name="level_id" type="radio" value="<?php echo $level->id; ?>" id="<?php echo $level->id; ?>"  <?php if (isset($data) && $data["level_id"] == $level->id) echo "checked = true"; ?>/>
-							    <label for="<?php echo $level->id; ?>"><?php echo $level->difficulty;?></label>
+							    <label for="<?php echo $level->id; ?>"><?php echo $level->difficulty;?>
+							    <?php if($level->id == 2): ?>
+							    	(pilihan level easy adalah selang kepercayaan (margin) ketepatan jawaban ±10%)
+						    	<?php elseif($level->id == 3): ?>
+						    		(pilihan level normal adalah selang kepercayaan (margin) ketepatan jawaban ±5%)
+							    <?php else: ?>
+							    	(pilihan level hard adalah selang kepercayaan (margin) ketepatan jawaban ±3%)
+						    	<?php endif; ?>
+							    </label>
 							  </p>
 
 						  <?php
 						    }
-						  ?>														
-						  <button type="submit" class="btn waves-effect waves-light blue darken-3" >Mulai Permainan
-						  	<i class="material-icons right">play_arrow</i>
-						  </button>
-						</form> 
+						  ?>						
 	  			</div>
 	  		</div>
+	  		<div class="row">
+		  		<div class="input-field center-align" style="margin-bottom:30px">
+	     			 <button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">Mulai Permainan
+	 	 					<i class="material-icons right">send</i>
+						</button>
+	 			 	</div>
+	  		</div>
+	  		</form>
 	  	
 	  </div>
 	</div>

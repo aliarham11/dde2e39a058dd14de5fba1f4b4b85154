@@ -41,9 +41,14 @@
 
 		 		<div class="input-field center-align" style="margin-bottom:30px">
 					<?php if($game->score_parts != NULL): ?>
+						
 						<a href="<?php echo base_url(); ?>material_costs"class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-con">Next
 		 					<i class="material-icons right">send</i>
 						</a>
+						<a href="#modal1" class="btn waves-effect waves-light blue darken-3 modal-trigger" type="button" name="action" id="interface4-btn-modal">Lihat Kunci Jawaban
+	 						<i class="material-icons right">vpn_key</i>
+						</a>
+
 					<?php else: ?>
 						<button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-nav">Selesai
 	 						<i class="material-icons right">send</i>
@@ -55,5 +60,17 @@
 	  	</div>
 	  </div>
 	</div>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Jawaban</h4>
+    <div class="row">
+	    <div id="interface3-chart" class="col s12">
 
+			</div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
+  </div>
+</div>
 </section>

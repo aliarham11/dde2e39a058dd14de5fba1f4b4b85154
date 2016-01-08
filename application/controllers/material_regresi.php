@@ -19,11 +19,11 @@ class Material_regresi extends CI_Controller {
 		$data['title'] = 'Naval Game';
 		$params["notice"] = get_notice();
 	    $params["tebak_regresi"] = $this->tebak_regresi->get_or_create_by_game($this->game_sessions["game_id"]);
-	    if ($params["tebak_regresi"]->score != null)
-	    {
-	      $this->session->set_flashdata("notice", "permainan telah berakhir");
-	      redirect(base_url()."games/run");
-	    }
+	    // if ($params["tebak_regresi"]->score != null)
+	    // {
+	    //   $this->session->set_flashdata("notice", "permainan telah berakhir");
+	    //   redirect(base_url()."games/run");
+	    // }
 
 		$this->htmllib->add_js('pages/material_regresi.js');
 		$this->load->view('plain/default_header');

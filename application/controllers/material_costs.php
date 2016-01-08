@@ -18,11 +18,11 @@ class Material_costs extends CI_Controller {
 
 		$data['title'] = 'Naval Game';
 		$params["question"] = $this->question->get_or_create_by_game($this->game_sessions["game_id"]);
-		if ($params["question"]->score_cost != null)
-	    {
-	      $this->session->set_flashdata("notice", "permainan telah berakhir");
-	      redirect(base_url()."games/run");
-	    }
+		// if ($params["question"]->score_cost != null)
+	 //    {
+	 //      $this->session->set_flashdata("notice", "permainan telah berakhir");
+	 //      redirect(base_url()."games/run");
+	 //    }
 		$this->htmllib->add_js('pages/material_costs.js');
 		$this->load->view('plain/default_header');
 		$this->load->view('material_costs/home', $data);

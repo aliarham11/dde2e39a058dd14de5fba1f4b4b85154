@@ -3,8 +3,30 @@ $(document).ready(function(){
     var story = 0;
 
     get_interface4_games();
-
+    // get_interface3_chart();
+    $('#interface4-btn-modal').click(function () {
+        console.log("screw you");
+        get_interface3_chart();
+    })
 })
+
+function get_interface3_chart(){
+    url = $('#base_url').val() + 'quiz_parts/knowledge'
+
+    $.getJSON(url, function(data) {
+        console.log(data);
+        $('#interface3-chart').getOrgChart({
+                    color: "blue",
+                    theme: "vivian",
+                    primaryColumns: ["name"],
+                    imageColumn: "image",
+                    editable: false,
+                    orientation: getOrgChart.RO_RIGHT,
+                    dataSource: data
+                  
+                });    
+    })    
+}
 
 
 function get_interface4_games(){
@@ -23,6 +45,7 @@ function get_interface4_games(){
                   
                 });    
     })   
+
 
     $("#interface4-chart").on("updateEvent", function(event, sender, args) {
         // console.log(args.data.answer);
