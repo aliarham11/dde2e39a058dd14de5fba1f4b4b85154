@@ -26,9 +26,12 @@
 	  		</div>
 	  		<div class="row">
 		  		<div class="input-field center-align" style="margin-bottom:30px">
-	     			 <button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">EXIT
+     			 	<a href="<?php echo base_url() ?>users/dashboard" class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">Coba Lagi
+	 	 					<i class="material-icons right">replay</i>
+						</a>
+     			 	<a href="<?php echo base_url() ?>base/logout" class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">EXIT
 	 	 					<i class="material-icons right">not_interested</i>
-						</button>
+						</a>
 	 			 	</div>
 	  		</div>
 	  	

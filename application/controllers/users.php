@@ -50,9 +50,9 @@ class Users extends CI_Controller {
 
 	public function dashboard($value='')
 	{
-		if (($level_session = need_level())){
-	      redirect(base_url()."games/start");
-	    }
+		// if (($level_session = need_level())){
+	 //      redirect(base_url()."games/start");
+	 //    }
 	    $params["notice"] = get_notice();
 	    $params["levels"] = $this->level->where();
 	    $params['user_name'] = $this->session->userdata("user_name");

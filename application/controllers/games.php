@@ -24,13 +24,13 @@ class Games extends CI_Controller {
   }
 
   public function start($lvl_id=null){
-    if (need_game()){
-      redirect(base_url()."games/run");
-      // $this->htmllib->add_js('pages/game.js');
-      // $this->load->view('plain/default_header');
-      // $this->load->view("games/home",$params);
-      // $this->load->view('plain/default_footer');
-    }
+    // if (need_game()){
+    //   redirect(base_url()."games/run");
+    //   // $this->htmllib->add_js('pages/game.js');
+    //   // $this->load->view('plain/default_header');
+    //   // $this->load->view("games/home",$params);
+    //   // $this->load->view('plain/default_footer');
+    // }
     $level_id = $this->input->post("level_id");
     // $level_id = $lvl_id;
     $level = $this->level->get_by_id($level_id);

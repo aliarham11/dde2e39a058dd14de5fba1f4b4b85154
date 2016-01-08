@@ -19,8 +19,7 @@
 	  	<div class="row">
 				<div id="interface4-chart" class="col s12">
 
- 			</div>	
-		  	 	
+ 				</div> 	
 	  	</div>
 	  	<div class="row">
 		  	<form method="post" action="<?php echo base_url(); ?>quiz_parts/submit">
@@ -37,16 +36,19 @@
               <input name="save" type="radio" value="1" id="1"/>
               <label for="1">Simpan dan Selesai</label>
             </p>
+          	<?php else: ?>
+          		<p class="center-align flow-text">Score : <?php echo $game->score_parts ?></p>
           	<?php endif; ?>
 
 		 		<div class="input-field center-align" style="margin-bottom:30px">
 					<?php if($game->score_parts != NULL): ?>
 						
-						<a href="<?php echo base_url(); ?>material_costs"class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-con">Next
-		 					<i class="material-icons right">send</i>
-						</a>
 						<a href="#modal1" class="btn waves-effect waves-light blue darken-3 modal-trigger" type="button" name="action" id="interface4-btn-modal">Lihat Kunci Jawaban
 	 						<i class="material-icons right">vpn_key</i>
+						</a>
+
+						<a href="<?php echo base_url(); ?>material_costs"class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-con">Next
+		 					<i class="material-icons right">send</i>
 						</a>
 
 					<?php else: ?>

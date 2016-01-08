@@ -3,7 +3,7 @@
  
 	<div class="container narrow z-depth-3">
 	  <nav>
-	    <div class="nav-wrapper blue darken-3">
+	    <div class="nav-wrapper red darken-4">
 	      <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="question_header">
 	      	Login<i class="material-icons left">person_pin</i>
 	      </a>
@@ -36,7 +36,7 @@
          			 <label for="username">Password</label>
        			 </div>
        			 <div class="input-field center-align" style="margin-bottom:30px">
-	       			 <button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">Login
+	       			 <button class="btn waves-effect waves-light red darken-4" type="submit" name="action" id="next_question">Login
 	   	 				<i class="material-icons right">send</i>
 	  				</button>
        			 </div>
