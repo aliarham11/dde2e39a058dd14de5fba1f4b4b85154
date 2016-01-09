@@ -79,7 +79,12 @@
                     foreach ($answers as $answer) {
                   ?>
                       <tr>
-                        <td><?php echo $answer->name; ?></td>
+                        <td>
+                          <?php
+                            if($answer->part_id == 31) echo "Total + Margin = " 
+                            echo $answer->name; 
+                          ?>
+                        </td>
                         <?php
                           if ($question->score_cost == null){
                             if ($answer->actual != null)
