@@ -78,7 +78,7 @@ class Answer extends CI_Model {
 	      	if(abs($diff) < $margin) $correct ++;
       	}
     	}
-      $data["score_cost"] = 100 * $correct / 31;
+      $data["score_cost"] = round(100 * $correct / 31);
       $this->load->model("question");
       $this->question->update($data, $question_id);
       return $data["score_cost"];
@@ -98,7 +98,7 @@ class Answer extends CI_Model {
 	}
 
 	public function set_by_driving_param($driving_param, $percentage){
-		return $driving_param * $percentage;
+		return round($driving_param * $percentage, 2);
 	}
 
 	public function set_steel($question_id){
@@ -106,14 +106,14 @@ class Answer extends CI_Model {
 		$question = $this->question->get_by_id($question_id);
 		$wst_kg = $question->wst * 1000;
 		$value = $wst_kg *($question->harga_pelat / $question->tukar_dolar) * 1 / 0.61;
-		return $value;
+		return round($value, 2);
 	}
 
 	public function set_populsion($question_id){
 		$this->load->model("question");
 		$question = $this->question->get_by_id($question_id);
 		$value =($question->type_of_engine * $question->machinery_cost) * 1/0.79;
-		return $value;
+		return round($value, 2);
 	}
 
 	public function set_consumable($question_id){
@@ -121,7 +121,7 @@ class Answer extends CI_Model {
 		$question = $this->question->get_by_id($question_id);
 		$lwt_kg = $question->lwt * 1000;
 		$value =($lwt_kg * $question->construction_cost) / $question->tukar_dolar;
-		return $value;
+		return round($value, 2);
 	}
 
 	public function set_inspection($question_id){
@@ -132,7 +132,7 @@ class Answer extends CI_Model {
 			$sum += $answer->actual;
 		}
 		$value = (0.02 * $sum);
-		return $value;
+		return round($value, 2);
 	}
 
 	public function get_value($part_id, $question_id){

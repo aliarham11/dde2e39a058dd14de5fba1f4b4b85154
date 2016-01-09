@@ -68,7 +68,7 @@ class Tebak_part extends CI_Model {
       foreach ($parts as $part) {
         if(strtolower($part->name) == strtolower($part->answer)) $correct ++;
       }
-      $data["score_parts"] = 100 * $correct / 31;
+      $data["score_parts"] = round(100 * $correct / 31);
       $this->load->model("game");
       $this->game->update($data, $game_id);
       return $data["score_parts"];

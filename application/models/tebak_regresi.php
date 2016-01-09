@@ -106,7 +106,7 @@ class Tebak_regresi extends CI_Model {
       $diff = $tebak_regresi->lwt - $tebak_regresi->act_lwt;
       if(abs($diff) < $margin_lwt) $correct ++;
 
-      $data["score"] = 100 * $correct/4;
+      $data["score"] = round(100 * $correct/4);
       $this->update($data, $tebak_regresi->id);
       return $data["score"];
     }

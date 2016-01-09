@@ -80,7 +80,7 @@ class Game extends CI_Model {
 		$_2 =  $tebak_regresi->score;
 		$_3 =  $game->score_parts;
 
-		$data["total_score"] = ($_1 + $_2 + $_3) / 3 ;
+		$data["total_score"] = round(($_1 + $_2 + $_3) / 3 );
 		$data["finish"] = true;
 		$this->update($data, $id);
 		return $data["total_score"];
