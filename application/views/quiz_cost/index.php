@@ -9,7 +9,7 @@
 
   <div class="container z-depth-3">
     <nav>
-      <div class="nav-wrapper red darken-4">
+      <div class="nav-wrapper blue darken-3">
         <div class="row">
           <a href="#!" class="brand-logo col s12" id="question_header" style="font-size: large;">Simulasi estimasi harga kapal baru jenis product oil tanker 5.000 dwt < x < 10.000 dwt <i class="material-icons left">perm_identity</i>
             
@@ -134,7 +134,7 @@
                   if ($question->score_cost == null)
                   {
                 ?>
-                    <button class="btn waves-effect waves-light red darken-4" type="submit" name="action" id="next_question">Kirim Jawaban
+                    <button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">Kirim Jawaban
                       <i class="material-icons right">send</i>
                     </button>
                 <?php
@@ -142,7 +142,7 @@
                   else
                   {
                 ?>
-                    <a class="btn waves-effect waves-light red darken-4" href="<?php echo base_url()."users/endgame";?>"> Next</a>
+                    <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."users/endgame";?>"> Next</a>
                 <?php
                   }
                 ?>
