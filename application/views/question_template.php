@@ -7,7 +7,7 @@
  
 	<div class="container z-depth-3">
 	  <nav>
-	    <div class="nav-wrapper blue darken-3">
+	    <div class="nav-wrapper red darken-4">
 	      <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="question_header">
 	      	Peraturan Permainan<i class="material-icons left">warning</i>
 	      </a>
@@ -32,7 +32,7 @@
          			 <label for="answer">Jawab</label>
        			 </div>
        			 <div class="input-field center-align" style="margin-bottom:30px">
-	       			 <button class="btn waves-effect waves-light blue darken-3" type="button" name="action" id="next_question">Mulai Permainan
+	       			 <button class="btn waves-effect waves-light red darken-4" type="button" name="action" id="next_question">Mulai Permainan
 	   	 				<i class="material-icons right">send</i>
 	  				</button>
        			 </div>

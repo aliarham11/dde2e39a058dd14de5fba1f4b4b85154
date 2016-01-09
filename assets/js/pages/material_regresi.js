@@ -87,7 +87,7 @@ function get_interface6_chart(){
     $.getJSON(url, function(data) {
         console.log(data);
         $('#interface6-chart').getOrgChart({
-                    color: "blue",
+                    color: "darkred",
                     theme: "vivian",
                     primaryColumns: ["name"],
                     imageColumn: "image",

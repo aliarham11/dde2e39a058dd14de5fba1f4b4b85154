@@ -6,7 +6,7 @@
 ?>
 <div class="container z-depth-3">
     <nav>
-      <div class="nav-wrapper blue darken-3">
+      <div class="nav-wrapper red darken-4">
         <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="question_header">
           Evaluasi Kemahiran (Intuisi) Identifikasi Dan Analisis Driving Parameters<i class="material-icons left">warning</i>
         </a>
@@ -182,7 +182,7 @@
                 <label for="1">Simpan dan Selesai</label>
               </p>
               <div class="input-field center-align" style="margin-bottom:30px">
-                <button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">Kirim Jawaban
+                <button class="btn waves-effect waves-light red darken-4" type="submit" name="action" id="next_question">Kirim Jawaban
                   <i class="material-icons right">send</i>
                 </button>
               </div>
@@ -191,7 +191,7 @@
               else{
             ?>
               <div class="input-field center-align" style="margin-bottom:30px">
-                <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."quiz_cost";?>"> Next</a>
+                <a class="btn waves-effect waves-light red darken-4" href="<?php echo base_url()."quiz_cost";?>"> Next</a>
               </div>
             <?php
               }

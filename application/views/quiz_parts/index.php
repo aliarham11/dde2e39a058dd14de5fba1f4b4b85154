@@ -3,7 +3,7 @@
  
 	<div class="container z-depth-3">
 	  <nav>
-	     <div class="nav-wrapper blue darken-3">
+	     <div class="nav-wrapper red darken-4">
 	      <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="interface3-header">
 	      	Evaluasi Pemahaman Dan Identifikasi Komponen Biaya (Cost Breakdown Structure)<i class="material-icons left">call_missed</i>
 	      </a>
@@ -43,16 +43,16 @@
 		 		<div class="input-field center-align" style="margin-bottom:30px">
 					<?php if($game->score_parts != NULL): ?>
 						
-						<a href="#modal1" class="btn waves-effect waves-light blue darken-3 modal-trigger" type="button" name="action" id="interface4-btn-modal">Lihat Kunci Jawaban
+						<a href="#modal1" class="btn waves-effect waves-light red darken-4 modal-trigger" type="button" name="action" id="interface4-btn-modal">Lihat Kunci Jawaban
 	 						<i class="material-icons right">vpn_key</i>
 						</a>
 
-						<a href="<?php echo base_url(); ?>material_costs"class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-con">Next
+						<a href="<?php echo base_url(); ?>material_costs"class="btn waves-effect waves-light red darken-4" type="submit" name="action" id="interface4-btn-con">Next
 		 					<i class="material-icons right">send</i>
 						</a>
 
 					<?php else: ?>
-						<button class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="interface4-btn-nav">Selesai
+						<button class="btn waves-effect waves-light red darken-4" type="submit" name="action" id="interface4-btn-nav">Selesai
 	 						<i class="material-icons right">send</i>
 						</button> 
 					<?php endif; ?>

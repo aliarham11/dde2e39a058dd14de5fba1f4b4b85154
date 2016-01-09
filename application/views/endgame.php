@@ -2,7 +2,7 @@
  
 	<div class="container z-depth-3">
 	  <nav>
-	    <div class="nav-wrapper blue darken-3">
+	    <div class="nav-wrapper red darken-4">
 	      <a href="#!" class="brand-logo text-title" id="question_header">
 	      	Game Selesai, <?php echo $user_name; ?>..!!<i class="material-icons left">perm_identity</i>
 	      </a>
@@ -26,10 +26,10 @@
 	  		</div>
 	  		<div class="row">
 		  		<div class="input-field center-align" style="margin-bottom:30px">
-     			 	<a href="<?php echo base_url() ?>users/dashboard" class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">Coba Lagi
+     			 	<a href="<?php echo base_url() ?>users/dashboard" class="btn waves-effect waves-light red darken-4" type="submit" name="action" id="next_question">Coba Lagi
 	 	 					<i class="material-icons right">replay</i>
 						</a>
-     			 	<a href="<?php echo base_url() ?>base/logout" class="btn waves-effect waves-light blue darken-3" type="submit" name="action" id="next_question">EXIT
+     			 	<a href="<?php echo base_url() ?>base/logout" class="btn waves-effect waves-light red darken-4" type="submit" name="action" id="next_question">EXIT
 	 	 					<i class="material-icons right">not_interested</i>
 						</a>
 	 			 	</div>

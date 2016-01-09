@@ -3,7 +3,7 @@
  
 	<div class="container z-depth-3">
 	  <nav>
-	     <div class="nav-wrapper blue darken-3">
+	     <div class="nav-wrapper red darken-4">
 	      <a href="#!" class="brand-logo" style="margin-left:10px;font-size: x-large;" id="interface3-header">
 	      	Interface 3<i class="material-icons left">call_missed</i>
 	      </a>
@@ -42,7 +42,7 @@
 	  	</div>
 	  	<div class="row">
 		 <div class="input-field center-align" style="margin-bottom:30px">
-   			 	<button class="btn waves-effect waves-light blue darken-3" type="button" name="action" id="interface3-btn-nav">Next
+   			 	<button class="btn waves-effect waves-light red darken-4" type="button" name="action" id="interface3-btn-nav">Next
 	 				<i class="material-icons right">send</i>
 				</button>
 			 </div>

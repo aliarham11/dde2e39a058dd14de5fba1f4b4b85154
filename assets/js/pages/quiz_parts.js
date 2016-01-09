@@ -16,7 +16,7 @@ function get_interface3_chart(){
     $.getJSON(url, function(data) {
         console.log(data);
         $('#interface3-chart').getOrgChart({
-                    color: "blue",
+                    color: "darkred",
                     theme: "vivian",
                     primaryColumns: ["name"],
                     imageColumn: "image",
@@ -35,7 +35,7 @@ function get_interface4_games(){
     $.getJSON(url, function(data) {
         console.log(data);
         $('#interface4-chart').getOrgChart({
-                    color: "blue",
+                    color: "darkred",
                     theme: "vivian",
                     primaryColumns: ["name"],
                     imageColumn: "image",

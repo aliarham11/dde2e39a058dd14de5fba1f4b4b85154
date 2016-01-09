@@ -28,7 +28,7 @@ function get_interface3_chart(){
     $.getJSON(url, function(data) {
         console.log(data);
         $('#interface3-chart').getOrgChart({
-                    color: "blue",
+                    color: "darkred",
                     theme: "vivian",
                     primaryColumns: ["name"],
                     imageColumn: "image",
