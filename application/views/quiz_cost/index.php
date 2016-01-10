@@ -81,7 +81,7 @@
                       <tr>
                         <td>
                           <?php
-                            if($answer->part_id == 31) echo "Total + Margin = " 
+                            if($answer->part_id == 31) echo "Total + Margin = "; 
                             echo $answer->name; 
                           ?>
                         </td>
