@@ -17,6 +17,13 @@ class Intro extends CI_Controller {
 		$this->load->view('plain/default_footer');
 	}
 
+	public function cover_page(){
+		
+		$this->load->view('plain/default_header');
+		$this->load->view('cover');
+		$this->load->view('plain/default_footer');	
+
+	}
 
 	
 }

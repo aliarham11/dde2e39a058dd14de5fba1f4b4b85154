@@ -12,28 +12,11 @@
 	  	<form action="<?php echo base_url();?>games/start" method="POST">
 	  		<div class="row">
 	  			<div class="col s12">
-	  				<p class="text-title">Pilih Level Games : </p>
-	  				
-						  <?php
-						    foreach ($levels as $level) {
-						  ?>
-
-					  		<p>
-							    <input name="level_id" type="radio" value="<?php echo $level->id; ?>" id="<?php echo $level->id; ?>"  <?php if (isset($data) && $data["level_id"] == $level->id) echo "checked = true"; ?>/>
-							    <label for="<?php echo $level->id; ?>"><?php echo $level->difficulty;?>
-							    <?php if($level->id == 2): ?>
-							    	(pilihan level easy adalah selang kepercayaan (margin) ketepatan jawaban ±10%)
-						    	<?php elseif($level->id == 3): ?>
-						    		(pilihan level normal adalah selang kepercayaan (margin) ketepatan jawaban ±5%)
-							    <?php else: ?>
-							    	(pilihan level hard adalah selang kepercayaan (margin) ketepatan jawaban ±3%)
-						    	<?php endif; ?>
-							    </label>
-							  </p>
-
-						  <?php
-						    }
-						  ?>						
+	  				<p class=" center-align" style="font-size:large">
+	  					Pada aplikasi ini, Anda akan dihadapkan pada evaluasi berupan simulasi melakukan estimasi harga kapal baru. Jawaban Anda dianggap benar jika berada pada selang ketepatan jawaban ±5% dari kunci jawaban yang ada pada aplikasi.
+	  				</p>
+	  				<input name="level_id" value="3" id="3" type="hidden" />
+						
 	  			</div>
 	  		</div>
 	  		<div class="row">

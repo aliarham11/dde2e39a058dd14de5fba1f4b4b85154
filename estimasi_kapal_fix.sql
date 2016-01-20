@@ -23,9 +23,9 @@ CREATE TABLE IF NOT EXISTS `answers` (
   `actual` double DEFAULT NULL,
   `estimate` double NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=386 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=448 DEFAULT CHARSET=utf8;
 
--- Dumping data for table estimasi_kapal.answers: ~372 rows (approximately)
+-- Dumping data for table estimasi_kapal.answers: ~434 rows (approximately)
 DELETE FROM `answers`;
 /*!40000 ALTER TABLE `answers` DISABLE KEYS */;
 INSERT INTO `answers` (`id`, `question_id`, `part_id`, `actual`, `estimate`) VALUES
@@ -400,7 +400,69 @@ INSERT INTO `answers` (`id`, `question_id`, `part_id`, `actual`, `estimate`) VAL
 	(382, 16, 28, 1911995.0733996, 0),
 	(383, 16, 29, 905767.15765283, 0),
 	(384, 16, 30, 18115343.153057, 0),
-	(385, 16, 31, 19021110.31071, 0);
+	(385, 16, 31, 19021110.31071, 0),
+	(386, 17, 1, 3317560.3009491, 0),
+	(387, 17, 2, 1658780.1504745, 0),
+	(388, 17, 3, 1161146.1053322, 0),
+	(389, 17, 4, 331756.03009491, 0),
+	(390, 17, 5, 331756.03009491, 0),
+	(391, 17, 6, 82939.007523728, 0),
+	(392, 17, 7, 6883937.6244693, 0),
+	(393, 17, 8, 1563569.6202532, 0),
+	(394, 17, 9, 515977.97468356, 0),
+	(395, 17, 10, 586338.60759495, 0),
+	(396, 17, 11, 261116.12658228, 0),
+	(397, 17, 12, 65669.924050634, 0),
+	(398, 17, 13, 2992672.2531646, 0),
+	(399, 17, 14, NULL, 0),
+	(400, 17, 15, NULL, 0),
+	(401, 17, 16, NULL, 0),
+	(402, 17, 17, NULL, 0),
+	(403, 17, 18, NULL, 0),
+	(404, 17, 19, 1163385.4585353, 0),
+	(405, 17, 20, 2201240.6342063, 0),
+	(406, 17, 21, 2201240.6342063, 0),
+	(407, 17, 22, 220799.90672338, 0),
+	(408, 17, 23, 147199.93781559, 0),
+	(409, 17, 24, 13609235.814914, 0),
+	(410, 17, 25, 272184.71629828, 0),
+	(411, 17, 26, 244966.24466845, 0),
+	(412, 17, 27, 1088738.8651931, 0),
+	(413, 17, 28, 1605889.8261598, 0),
+	(414, 17, 29, 760756.28205369, 0),
+	(415, 17, 30, 15215125.641074, 0),
+	(416, 17, 31, 15975881.923128, 0),
+	(417, 18, 1, 3740676.96, 0),
+	(418, 18, 2, 1870338.48, 0),
+	(419, 18, 3, 1309236.94, 0),
+	(420, 18, 4, 374067.7, 0),
+	(421, 18, 5, 374067.7, 0),
+	(422, 18, 6, 93516.92, 0),
+	(423, 18, 7, 7761904.7, 0),
+	(424, 18, 8, 2088607.59, 0),
+	(425, 18, 9, 689240.5, 0),
+	(426, 18, 10, 783227.85, 0),
+	(427, 18, 11, 348797.47, 0),
+	(428, 18, 12, 87721.52, 0),
+	(429, 18, 13, 3997594.93, 0),
+	(430, 18, 14, NULL, 0),
+	(431, 18, 15, NULL, 0),
+	(432, 18, 16, NULL, 0),
+	(433, 18, 17, NULL, 0),
+	(434, 18, 18, NULL, 0),
+	(435, 18, 19, 1311761.89, 0),
+	(436, 18, 20, 2270206.68, 0),
+	(437, 18, 21, 2270206.68, 0),
+	(438, 18, 22, 261425.23, 0),
+	(439, 18, 23, 174283.48666667, 0),
+	(440, 18, 24, 15777176.916667, 0),
+	(441, 18, 25, 315543.53833334, 0),
+	(442, 18, 26, 283989.18450001, 0),
+	(443, 18, 27, 1262174.1533334, 0),
+	(444, 18, 28, 1861706.8761667, 0),
+	(445, 18, 29, 881944.18964169, 0),
+	(446, 18, 30, 17638883.792834, 0),
+	(447, 18, 31, 18520827.982476, 0);
 /*!40000 ALTER TABLE `answers` ENABLE KEYS */;
 
 
@@ -414,9 +476,9 @@ CREATE TABLE IF NOT EXISTS `games` (
   `finish` tinyint(1) NOT NULL DEFAULT '0',
   `total_score` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
 
--- Dumping data for table estimasi_kapal.games: ~81 rows (approximately)
+-- Dumping data for table estimasi_kapal.games: ~85 rows (approximately)
 DELETE FROM `games`;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
 INSERT INTO `games` (`id`, `user_id`, `level_id`, `created_at`, `score_parts`, `finish`, `total_score`) VALUES
@@ -501,7 +563,10 @@ INSERT INTO `games` (`id`, `user_id`, `level_id`, `created_at`, `score_parts`, `
 	(104, 6, 3, '2016-01-07 21:18:22', 0, 0, NULL),
 	(105, 4, 3, '2016-01-08 23:42:57', 0, 0, NULL),
 	(106, 6, 3, '2016-01-09 11:30:07', 0, 0, NULL),
-	(107, 6, 3, '2016-01-09 12:53:54', NULL, 0, NULL);
+	(107, 6, 3, '2016-01-09 12:53:54', 0, 0, NULL),
+	(108, 6, 4, '2016-01-10 17:21:54', NULL, 0, NULL),
+	(109, 6, 3, '2016-01-10 17:46:36', NULL, 0, NULL),
+	(110, 6, 3, '2016-01-20 20:28:49', NULL, 0, NULL);
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 
 
@@ -513,7 +578,7 @@ CREATE TABLE IF NOT EXISTS `interface_5` (
   `label_number` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table estimasi_kapal.interface_5: ~28 rows (approximately)
+-- Dumping data for table estimasi_kapal.interface_5: ~27 rows (approximately)
 DELETE FROM `interface_5`;
 /*!40000 ALTER TABLE `interface_5` DISABLE KEYS */;
 INSERT INTO `interface_5` (`id`, `label_name`, `label_text`, `label_number`) VALUES
@@ -527,8 +592,7 @@ INSERT INTO `interface_5` (`id`, `label_name`, `label_text`, `label_number`) VAL
 	(0, 'Necessary power at actual draught', '2570 KW', 1),
 	(9, 'Main engine power used', '2760 KW, Wartsilla 6L32', 1),
 	(10, 'Wst (Weight of steel and profile)', '1.968.166 kg (1.968,2 ton)', 1),
-	(0, 'Displacement of weight', '9.153,6 ton ', 1),
-	(12, 'LWT (Lightweight)', '1.968.166 kg', 1),
+	(12, 'LWT (Lightweight)', '2400 ton', 1),
 	(13, 'Loa (Length over all)', '108,20 m', 2),
 	(14, 'Lpp (Length between perpendicular)', '102 m', 2),
 	(15, 'B (Breadth)', '19,2 m', 2),
@@ -582,9 +646,9 @@ CREATE TABLE IF NOT EXISTS `questions` (
   `lwt` double NOT NULL,
   `score_cost` double DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Dumping data for table estimasi_kapal.questions: ~12 rows (approximately)
+-- Dumping data for table estimasi_kapal.questions: ~15 rows (approximately)
 DELETE FROM `questions`;
 /*!40000 ALTER TABLE `questions` DISABLE KEYS */;
 INSERT INTO `questions` (`id`, `game_id`, `dwt`, `harga_pelat`, `machinery_cost`, `construction_cost`, `tukar_dolar`, `wst`, `engine_power`, `type_of_engine`, `lwt`, `score_cost`) VALUES
@@ -599,7 +663,10 @@ INSERT INTO `questions` (`id`, `game_id`, `dwt`, `harga_pelat`, `machinery_cost`
 	(13, 49, 8905, 8154, 517, 8189, 9500, 2152.59, 3835.03175, 3920, 2589.6345, 38.709677419355),
 	(14, 104, 8729, 8457, 531, 8821, 9500, 2138.862, 3712.82087, 3920, 2601.89818, 16.129032258065),
 	(15, 105, 9701, 8190, 548, 9115, 9500, 2214.678, 4441.91807, 4480, 2518.69498, 16.129032258065),
-	(16, 106, 7835, 10294, 529, 9125, 9500, 2069.13, 3159.00575, 3360, 2645.0605, 16.129032258065);
+	(16, 106, 7835, 10294, 529, 9125, 9500, 2069.13, 3159.00575, 3360, 2645.0605, 16.129032258065),
+	(17, 107, 5028, 10391, 519, 8128, 9500, 1850.184, 2147.33488, 2380, 2572.80832, 16.129032258065),
+	(18, 108, 6962, 10833, 550, 8119, 9500, 2001.036, 2726.18108, 3000, 2656.35712, NULL),
+	(19, 110, 7265, 9018, 547, 8143, 9500, 2024.67, 2864.31575, 3000, 2655.8905, NULL);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 
 
@@ -656,9 +723,9 @@ CREATE TABLE IF NOT EXISTS `tebak_parts` (
   `part_id` int(11) NOT NULL,
   `answer` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=280 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=404 DEFAULT CHARSET=latin1;
 
--- Dumping data for table estimasi_kapal.tebak_parts: ~248 rows (approximately)
+-- Dumping data for table estimasi_kapal.tebak_parts: ~372 rows (approximately)
 DELETE FROM `tebak_parts`;
 /*!40000 ALTER TABLE `tebak_parts` DISABLE KEYS */;
 INSERT INTO `tebak_parts` (`id`, `game_id`, `part_id`, `answer`) VALUES
@@ -909,7 +976,131 @@ INSERT INTO `tebak_parts` (`id`, `game_id`, `part_id`, `answer`) VALUES
 	(276, 106, 28, ''),
 	(277, 106, 29, ''),
 	(278, 106, 30, ''),
-	(279, 106, 31, 'GRAND MARGIN');
+	(279, 106, 31, 'GRAND MARGIN'),
+	(280, 107, 1, ''),
+	(281, 107, 2, ''),
+	(282, 107, 3, ''),
+	(283, 107, 4, ''),
+	(284, 107, 5, ''),
+	(285, 107, 6, ''),
+	(286, 107, 7, ''),
+	(287, 107, 8, ''),
+	(288, 107, 9, ''),
+	(289, 107, 10, ''),
+	(290, 107, 11, ''),
+	(291, 107, 12, ''),
+	(292, 107, 13, ''),
+	(293, 107, 14, ''),
+	(294, 107, 15, ''),
+	(295, 107, 16, ''),
+	(296, 107, 17, ''),
+	(297, 107, 18, ''),
+	(298, 107, 19, ''),
+	(299, 107, 20, ''),
+	(300, 107, 21, ''),
+	(301, 107, 22, ''),
+	(302, 107, 23, ''),
+	(303, 107, 24, ''),
+	(304, 107, 25, ''),
+	(305, 107, 26, ''),
+	(306, 107, 27, ''),
+	(307, 107, 28, ''),
+	(308, 107, 29, ''),
+	(309, 107, 30, ''),
+	(310, 107, 31, ''),
+	(311, 108, 1, ''),
+	(312, 108, 2, ''),
+	(313, 108, 3, ''),
+	(314, 108, 4, ''),
+	(315, 108, 5, ''),
+	(316, 108, 6, ''),
+	(317, 108, 7, ''),
+	(318, 108, 8, ''),
+	(319, 108, 9, ''),
+	(320, 108, 10, ''),
+	(321, 108, 11, ''),
+	(322, 108, 12, ''),
+	(323, 108, 13, ''),
+	(324, 108, 14, ''),
+	(325, 108, 15, ''),
+	(326, 108, 16, ''),
+	(327, 108, 17, ''),
+	(328, 108, 18, ''),
+	(329, 108, 19, ''),
+	(330, 108, 20, ''),
+	(331, 108, 21, ''),
+	(332, 108, 22, ''),
+	(333, 108, 23, ''),
+	(334, 108, 24, ''),
+	(335, 108, 25, ''),
+	(336, 108, 26, ''),
+	(337, 108, 27, ''),
+	(338, 108, 28, ''),
+	(339, 108, 29, ''),
+	(340, 108, 30, ''),
+	(341, 108, 31, ''),
+	(342, 109, 1, NULL),
+	(343, 109, 2, NULL),
+	(344, 109, 3, NULL),
+	(345, 109, 4, NULL),
+	(346, 109, 5, NULL),
+	(347, 109, 6, NULL),
+	(348, 109, 7, NULL),
+	(349, 109, 8, NULL),
+	(350, 109, 9, NULL),
+	(351, 109, 10, NULL),
+	(352, 109, 11, NULL),
+	(353, 109, 12, NULL),
+	(354, 109, 13, NULL),
+	(355, 109, 14, NULL),
+	(356, 109, 15, NULL),
+	(357, 109, 16, NULL),
+	(358, 109, 17, NULL),
+	(359, 109, 18, NULL),
+	(360, 109, 19, NULL),
+	(361, 109, 20, NULL),
+	(362, 109, 21, NULL),
+	(363, 109, 22, NULL),
+	(364, 109, 23, NULL),
+	(365, 109, 24, NULL),
+	(366, 109, 25, NULL),
+	(367, 109, 26, NULL),
+	(368, 109, 27, NULL),
+	(369, 109, 28, NULL),
+	(370, 109, 29, NULL),
+	(371, 109, 30, NULL),
+	(372, 109, 31, NULL),
+	(373, 110, 1, ''),
+	(374, 110, 2, ''),
+	(375, 110, 3, ''),
+	(376, 110, 4, ''),
+	(377, 110, 5, ''),
+	(378, 110, 6, ''),
+	(379, 110, 7, ''),
+	(380, 110, 8, ''),
+	(381, 110, 9, ''),
+	(382, 110, 10, ''),
+	(383, 110, 11, ''),
+	(384, 110, 12, ''),
+	(385, 110, 13, ''),
+	(386, 110, 14, ''),
+	(387, 110, 15, ''),
+	(388, 110, 16, ''),
+	(389, 110, 17, ''),
+	(390, 110, 18, ''),
+	(391, 110, 19, ''),
+	(392, 110, 20, ''),
+	(393, 110, 21, ''),
+	(394, 110, 22, ''),
+	(395, 110, 23, ''),
+	(396, 110, 24, ''),
+	(397, 110, 25, ''),
+	(398, 110, 26, ''),
+	(399, 110, 27, ''),
+	(400, 110, 28, ''),
+	(401, 110, 29, ''),
+	(402, 110, 30, ''),
+	(403, 110, 31, '');
 /*!40000 ALTER TABLE `tebak_parts` ENABLE KEYS */;
 
 
@@ -928,9 +1119,9 @@ CREATE TABLE IF NOT EXISTS `tebak_regresis` (
   `act_lwt` double NOT NULL,
   `score` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1119 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1122 DEFAULT CHARSET=latin1;
 
--- Dumping data for table estimasi_kapal.tebak_regresis: ~20 rows (approximately)
+-- Dumping data for table estimasi_kapal.tebak_regresis: ~22 rows (approximately)
 DELETE FROM `tebak_regresis`;
 /*!40000 ALTER TABLE `tebak_regresis` DISABLE KEYS */;
 INSERT INTO `tebak_regresis` (`id`, `game_id`, `dwt`, `wst`, `act_wst`, `engine_power`, `act_engine_power`, `type_of_engine`, `act_type_of_engine`, `lwt`, `act_lwt`, `score`) VALUES
@@ -953,7 +1144,10 @@ INSERT INTO `tebak_regresis` (`id`, `game_id`, `dwt`, `wst`, `act_wst`, `engine_
 	(1115, 103, 8512, NULL, 2121.936, NULL, 3568.11008, NULL, 3920, NULL, 2615.31312, NULL),
 	(1116, 104, 9291, 0, 2182.698, 0, 4118.24767, 1935, 4480, 0, 2558.39938, 0),
 	(1117, 105, 7724, 0, 2060.472, 0, 3098.05232, 1935, 3360, 0, 2648.18848, 0),
-	(1118, 106, 8552, 0, 2125.056, 0, 3594.28928, 1935, 3920, 0, 2612.98192, 0);
+	(1118, 106, 8552, 0, 2125.056, 0, 3594.28928, 1935, 3920, 0, 2612.98192, 0),
+	(1119, 107, 8866, 0, 2149.548, 0, 3807.57692, 1935, 3920, 0, 2592.45888, 0),
+	(1120, 108, 7042, 0, 2007.276, 0, 2761.40348, 1935, 3000, 0, 2656.59072, NULL),
+	(1121, 110, 9989, NULL, 2237.142, NULL, 4683.34847, NULL, 5040, NULL, 2486.78458, NULL);
 /*!40000 ALTER TABLE `tebak_regresis` ENABLE KEYS */;
 
 

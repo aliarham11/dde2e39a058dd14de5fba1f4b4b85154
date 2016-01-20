@@ -33,7 +33,7 @@
 	  					<tr><th colspan="2" class="center-align">HULL PART</th></tr>
 	  					<tr>
 	  						<td class="center-align">Komponen Biaya</td>
-	  						<td class="center-align">Keteraga Biaya / Harga</td>
+	  						<td class="center-align">Keterangan Biaya / Harga</td>
 	  					</tr>
 
 	  				</thead>
@@ -71,7 +71,7 @@
 		  					<th colspan="2" class="center-align">MACHINERY PART</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
-		  						<td class="center-align">Keteraga Biaya / Harga</td>
+		  						<td class="center-align">Keterangan Biaya / Harga</td>
 		  					</tr>
 		  				</thead>
 		  				<tbody>
@@ -100,7 +100,7 @@
 		  					<th colspan="2" class="center-align">ELECTRIC PART</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
-		  						<td class="center-align">Keteraga Biaya / Harga</td>
+		  						<td class="center-align">Keterangan Biaya / Harga</td>
 		  					</tr>
 		  				</thead>
 		  				<tbody>
@@ -115,7 +115,7 @@
 		  					<th colspan="2" class="center-align">CONSTRUCTION COST</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
-		  						<td class="center-align">Keteraga Biaya / Harga</td>
+		  						<td class="center-align">Keterangan Biaya / Harga</td>
 		  					</tr>
 		  				</thead>
 		  				<tbody>
@@ -130,7 +130,7 @@
 		  					<th colspan="2" class="center-align">INSEPCTION & SUERVEY COST</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
-		  						<td class="center-align">Keteraga Biaya / Harga</td>
+		  						<td class="center-align">Keterangan Biaya / Harga</td>
 		  					</tr>
 		  				</thead>
 		  				<tbody>
@@ -144,7 +144,7 @@
 		  					<th colspan="2" class="center-align">LAUNCHING & TESTING</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
-		  						<td class="center-align">Keteraga Biaya / Harga</td>
+		  						<td class="center-align">Keterangan Biaya / Harga</td>
 		  					</tr>
 		  				</thead>
 		  				<tbody>
@@ -158,7 +158,7 @@
 		  					<th colspan="2" class="center-align">INDIRECT COST</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
-		  						<td class="center-align">Keteraga Biaya / Harga</td>
+		  						<td class="center-align">Keterangan Biaya / Harga</td>
 		  					</tr>
 		  				</thead>
 		  				<tbody>
@@ -179,7 +179,7 @@
 		  					<th colspan="2" class="center-align">MARGIN FOR PROFIT</th>
 		  					<tr>
 		  						<td class="center-align">Komponen Biaya</td>
-		  						<td class="center-align">Keteraga Biaya / Harga</td>
+		  						<td class="center-align">Keterangan Biaya / Harga</td>
 		  					</tr>
 		  				</thead>
 		  				<tbody>

@@ -24,7 +24,7 @@
 
 	  		<div class="col s10" id="tujuan" >
 	  			<ul class="circle-style" style="margin-left:5%; ">
-						<li>Membangun dan meningkatkan kemahiran (intuisi) dalam membuat keputusan estimasi harga kapal baru.</li>
+						<li>Membangun dan meningkatkan kemahiran (intuisi) dalam membuat keputusan estimasi harga kapal baru khusus Product Oil Tanker Double Hull 5000-9999 DWT.</li>
 					</ul>	
 	  		</div>
 
@@ -39,7 +39,7 @@
 	  		</div>
 	  			
   			<div class="col s10" id="sistematika" width="200px" style="margin-left:5%;">
-  				<p>
+  				<p style="text-align:justify">
   					Aplikasi ini dirancang dengan tujuan untuk meningkatkan kemahiran (intuisi) estimasi harga kapal baru dengan cara membangun pengetahuan dasar dan rekayasa pengalaman user kemudian mengembangkan pengetahuan ini menjadi sebuah kemahiran. Metode estimasi yang digunakan yaitu menempatkan user/estimator untuk dapat mengenali pola membuat keputusan estimasi berdasarkan pengetahuan terhadap parameter-parameter yang akan disampaikan. Cara operasional aplikasi ini terbagi atas 2 konsep pemahaman, yaitu pertama user akan membangun pengetahuan melalui informasi yang disajikan. Kedua user akan dihadapkan evaluasi secara berkala untuk mengembangkan pengetahua menjadi sebuah kemahiran (intuisi) yang handal.
   				</p>
   			</div>

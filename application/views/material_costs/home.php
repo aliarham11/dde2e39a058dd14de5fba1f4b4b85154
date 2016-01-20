@@ -21,8 +21,7 @@
 					Data-data berikut diinformasikan kepada user untuk dijadikan sebagai rekayasa pengalaman sehinggga user dapat melakukan identifikasi pola hubungan ukuran kapal terhadap biayanya
 				</p>
 				<p class="flow-text center-align col s12" id="title-text3" style="display:none">
-					Berdasarkan informasi yang disampaikan di Interface 5.1  dan Interface 5.2.
-Meskipun keduanya memiliki karakteristik ukuran yang sama, namun harga kapal keduanya berbeda. Hal ini dikarenakan beberapa faktor diantaranya perubahan nilai tukar mata uang, perubahan biaya jasa dan faktor lainnya yang tidak disajikan dalam aplikasi ini.
+					Berdasarkan informasi yang disampaikan di Interface 5.1 dan Interface 5.2. Meskipun keduanya memiliki karakteristik ukuran yang sama, namun harga kapal keduanya berbeda. Pengadaan proyek kapal pada tahun 2009 dipengaruhi nilai tukar dollar sebesar 9400IDR/1U$D, harga pelat 9500IDR/kg dan harga main engine berkisar ±1.4 juta U$D. Kondisi ekonomi di atas dapat dijadikan sebagai pengetahuan awal untuk memahami pola penilaian estimasi harga kapal baru
 
 				</p>
 	  		</div>
