@@ -32,6 +32,10 @@
                     <td><?php echo $question->dwt; ?></td>
                   </tr>
                   <tr>
+                    <td>Speed</td>
+                    <td><?php echo $question->speed; ?></td>
+                  </tr>
+                  <tr>
                     <td>Harga Pelat (kg)</td>
                     <td><?php echo $question->harga_pelat; ?></td>
                   </tr>
@@ -146,9 +150,15 @@
                   }
                   else
                   {
-                ?>
-                    <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."users/endgame";?>"> Next</a>
-                <?php
+                    if($playing < 5){
+                    ?>
+                        <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."quiz_cost/create_more";?>"> Next Quiz</a>
+                    <?php
+                    }else{
+                      ?>
+                        <a class="btn waves-effect waves-light blue darken-3" href="<?php echo base_url()."users/endgame";?>"> Next</a>
+                      <?php
+                    }
                   }
                 ?>
                   </div>

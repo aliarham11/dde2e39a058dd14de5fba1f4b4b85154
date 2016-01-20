@@ -67,26 +67,28 @@ class Answer extends CI_Model {
 
 	public function calculate_score_by_questions($question_id, $margin_percentage){
 		$answer_parts = $this->answer_parts($question_id);
-    if (count($answer_parts) > 0){
-      $correct = 0;
-    	foreach ($answer_parts as $answer) {
-    		if($answer->actual == null) $correct++;
-    		else
-    		{
-	    		$margin = $answer->actual * $margin_percentage / 100;
-	    		$diff = $answer->actual - $answer->estimate;
-	      	if(abs($diff) < $margin) $correct ++;
-      	}
-    	}
-      $data["score_cost"] = round(100 * $correct / 31);
-      $this->load->model("question");
-      $this->question->update($data, $question_id);
-      return $data["score_cost"];
-    }
-    else{
-      return false;
-    }
-  }
+	    if (count($answer_parts) > 0){
+	      $correct = 0;
+	    	foreach ($answer_parts as $answer) {
+	    		if(14 <= $answer->part_id && $answer->part_id <= 18 && $answer->part_id == 27) continue;
+	    		// if($answer->actual == null) $correct++;
+	    		else
+	    		{
+		    		$margin = $answer->actual * $margin_percentage / 100;
+		    		$diff = $answer->actual - $answer->estimate;
+		    	  	if(abs($diff) < $margin) $correct ++;
+	    	  	}
+	    	}
+	      // $data["score_cost"] = round(100 * $correct / 31);
+	    	$data["score_cost"] = round(100 * $correct / 25);
+	     	$this->load->model("question");
+	     	$this->question->update($data, $question_id);
+	     	return $data["score_cost"];
+	    }
+	    else{
+	      return false;
+	    }
+  	}
 
 	public function answer_parts($question_id){
 		$answers = $this->where("answers.question_id = '$question_id'");

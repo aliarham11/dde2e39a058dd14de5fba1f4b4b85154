@@ -8,6 +8,7 @@ class Tebak_regresi extends CI_Model {
     $this->db->select('tebak_regresis.id');
     $this->db->select('tebak_regresis.game_id');
     $this->db->select('tebak_regresis.dwt');
+    $this->db->select('tebak_regresis.speed');
     $this->db->select('tebak_regresis.wst');
     $this->db->select('tebak_regresis.act_wst');
     $this->db->select('tebak_regresis.engine_power');
@@ -59,9 +60,19 @@ class Tebak_regresi extends CI_Model {
     return $wst;
   }
 
-  public function generate_engine_power($dwt){
-    $engine_power = ( 7 * pow(10, -5)) * pow($dwt,2) - ( 0.54 * $dwt ) + ( 3092.8 );
-    return $engine_power;
+  // public function generate_engine_power($dwt){
+  public function generate_engine_power($dwt, $speed){
+    // $engine_power = ( 7 * pow(10, -5)) * pow($dwt,2) - ( 0.54 * $dwt ) + ( 3092.8 );
+    switch($speed){
+      case 14:
+        return 0.2959 * $dwt + 2747.8;
+      case 13:
+        return 0.2466 * $dwt + 1820;
+      case 12:
+        return 0.1982 * $dwt + 1248.4;
+      case 11:
+        return 0.1612 * $dwt + 847.42;
+    }
   }
 
   public function generate_lwt($dwt){
@@ -75,8 +86,10 @@ class Tebak_regresi extends CI_Model {
       $this->load->model("katalog_engine");
       $data["game_id"] = $game_id;
       $data["dwt"] = rand ( 5000 , 9999 );
+      $data["speed"] = rand ( 11 , 14 );
+      // $data["act_wst"] = $this->generate_wst($data["dwt"]);
       $data["act_wst"] = $this->generate_wst($data["dwt"]);
-      $data["act_engine_power"] = $this->generate_engine_power($data["dwt"]);
+      $data["act_engine_power"] = $this->generate_engine_power($data["dwt"], $data["speed"]);
       $data["act_type_of_engine"] = $this->katalog_engine->get_engine($data["act_engine_power"]);
       $data["act_lwt"] = $this->generate_lwt($data["dwt"]);
       $this->insert($data);

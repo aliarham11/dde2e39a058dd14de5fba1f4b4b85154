@@ -47,6 +47,10 @@
                   <td><?php echo $tebak_regresi->dwt;?></td>
                 </tr>
                 <tr>
+                  <td>Speed (ton)</td>
+                  <td><?php echo $tebak_regresi->speed;?></td>
+                </tr>
+                <tr>
                   <td>Wst (ton)</td>
                   <?php
                     if($tebak_regresi->score == null){
