@@ -83,10 +83,12 @@ class Users extends CI_Controller {
 	public function get_score()
 	{
 
-
-		$score = $this->game->score($this->input->post('level'), $this->session->userdata('user_id'));
-
-		echo json_encode($score);
+		$score = $this->game->score($this->input->post('level'), $this->session->userdata('game_id'));
+		$data = array();
+		foreach ($score as $row) {
+			array_push($data, $row['score_cost']);
+		}
+		echo json_encode($data);
 		# code...
 	}
 }

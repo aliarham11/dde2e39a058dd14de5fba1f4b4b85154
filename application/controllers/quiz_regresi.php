@@ -44,8 +44,8 @@ class Quiz_regresi extends CI_Controller {
       redirect(base_url()."quiz_regresi/index");
     }
     else{
-      redirect(base_url()."quiz_regresi/index");
-      // redirect(base_url()."quiz_cost");
+      // redirect(base_url()."quiz_regresi/index");
+      redirect(base_url()."quiz_cost");
     }
   }
 

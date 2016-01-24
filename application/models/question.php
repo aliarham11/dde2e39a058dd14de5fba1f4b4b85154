@@ -28,6 +28,7 @@ class Question extends CI_Model {
 
 	public function update($data, $id){
 		return $this->db->update($this->table_name, $data, "$this->pk_col = '$id'");
+		
 	}
 
 	public function destroy($id){

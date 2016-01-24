@@ -47,7 +47,7 @@
                   <td><?php echo $tebak_regresi->dwt;?></td>
                 </tr>
                 <tr>
-                  <td>Speed (ton)</td>
+                  <td>Speed (knot)</td>
                   <td><?php echo $tebak_regresi->speed;?></td>
                 </tr>
                 <tr>

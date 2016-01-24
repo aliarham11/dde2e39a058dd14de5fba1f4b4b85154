@@ -36,15 +36,15 @@
                     <td><?php echo $question->speed; ?></td>
                   </tr>
                   <tr>
-                    <td>Harga Pelat (kg)</td>
+                    <td>Harga Pelat (kg) / IDR</td>
                     <td><?php echo $question->harga_pelat; ?></td>
                   </tr>
                   <tr>
-                    <td>Machinery cost (KW)</td>
+                    <td>Machinery cost (KW) / USD</td>
                     <td><?php echo $question->machinery_cost; ?></td>
                   </tr>
                   <tr>
-                    <td>Construction cost / kg</td>
+                    <td>Construction cost (kg) / IDR</td>
                     <td><?php echo $question->construction_cost; ?></td>
                   </tr>
                   <tr>

@@ -10,6 +10,7 @@ class Quiz_cost extends CI_Controller {
     $this->load->library('htmllib');
     $this->load->model('question');
     $this->load->model('answer');
+    $this->load->model('score_cost_summary', 'summary');
     $this->game_sessions = need_game();
     if ($this->game_sessions == false){
       redirect(base_url()."games/start");
@@ -20,6 +21,8 @@ class Quiz_cost extends CI_Controller {
   public function index(){
     $level_sessions = need_level();
     $params["notice"] = get_notice();
+    // var_dump($this->session->userdata("game_id"));
+    // exit();
     $params["question"] = $this->question->get_or_create_by_game($this->game_sessions["game_id"]);
     $params["answers"] = $this->answer->get_or_create_by_question($params["question"]->id);
     $params["margin_percentage"] = get_margin($level_sessions["level_id"]);
@@ -34,22 +37,27 @@ class Quiz_cost extends CI_Controller {
     $question = $this->question->get_or_create_by_game($this->game_sessions["game_id"]);
     $estimate = $this->input->post("estimate");
     for($i = 1; $i < 32; $i++){
-      $data["estimate"] = $estimate[$i];
-      $part_id = $i;
-      $this->answer->update_by_question($data, $question->id, $part_id);
+      if(isset($estimate[$i])){
+        $data["estimate"] = $estimate[$i];
+        $part_id = $i;
+        $this->answer->update_by_question($data, $question->id, $part_id);
+      }
     }
     if ($this->input->post("save") == "1")
     {
       $level_sessions = need_level();
       $margin = get_margin($level_sessions["level_id"]);
-      $this->answer->calculate_score_by_questions($question->id, $margin);
+      $data["total_score"] = $this->answer->calculate_score_by_questions($question->id, $margin);
+      $data["game_id"] = $this->game_sessions["game_id"];
+      $data["timestamp"] = $date = date('m/d/Y h:i:s a', time());
+      // $this->summary->insert($data);
       $this->session->set_flashdata("notice", "permainan telah berakhir");
       redirect(base_url()."quiz_cost/index");
       //redirect(base_url()."games/run");
     }
     else{
-      // redirect(base_url()."users/endgame");
-      redirect(base_url()."quiz_cost/index");
+      redirect(base_url()."users/endgame");
+      // redirect(base_url()."quiz_cost/index");
     }
   }
 
@@ -60,7 +68,7 @@ class Quiz_cost extends CI_Controller {
       redirect(base_url()."quiz_cost/index");
     }
     else{
-      redirect(base_url()."quiz_cost/index");
+      redirect(base_url()."users/endgame");
     }
   }
 

@@ -18,9 +18,9 @@ function get_score_avg_graph(){
       method : 'post',
       dataType : 'json',
       success : function(data){
-        console.log(data[0].score_parts);
+        console.log(data);
         var LineChartSampleData = {
-        labels: ["Quiz Tebak Parts", "Quiz Tebak Regresi ", "Quiz Tebak Cost"], 
+        labels: ["Simulasi 1", "Simulasi 2", "Simulasi 3", "Simulasi 4", "Simulasi 5",], 
         datasets: [{
          label: "My Second dataset",
          fillColor: "rgba(151,187,205,0.2)",
@@ -29,13 +29,13 @@ function get_score_avg_graph(){
          pointStrokeColor: "#fff",
          pointHighlightFill: "#fff",
          pointHighlightStroke: "rgba(151,187,205,1)",
-         data: [data[0].score_parts, data[0].score_regresi, data[0].score_costs] 
+         data: data 
         }]
        };
 
       new Chart(document.getElementById("score-avg-graph").getContext("2d")).Line(LineChartSampleData,{
           responsive:true,
-          xAxisLabel : 'Games',
+          xAxisLabel : 'Simulasi Tebak Harga',
           yAxisLabel : 'Total Score'
       });
       }

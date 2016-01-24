@@ -64,8 +64,8 @@ class Quiz_parts extends CI_Controller {
       redirect(base_url()."quiz_parts/index");
     }
     else{
-      // redirect(base_url()."material_costs");
-      redirect(base_url()."quiz_parts/index");
+      redirect(base_url()."material_costs");
+      // redirect(base_url()."quiz_parts/index");
       //redirect ke permainan
     }
   }
